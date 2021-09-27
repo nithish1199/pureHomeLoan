@@ -23,6 +23,7 @@ export class ApplyComponent implements OnInit {
     AadharNumber:new FormControl(null,[Validators.required]),
     PanNumber:new FormControl(null,[Validators.required]),
   }
+  //{validators:this.passwordMatchValidator}
   );
   constructor() { }
 
@@ -73,5 +74,9 @@ export class ApplyComponent implements OnInit {
   get pannumber()
   {
     return this.PersonalDetails.get('PanNumber');
+  }
+
+  passwordMatchValidator(PersonalDetails:FormGroup){
+    return PersonalDetails.controls['Password'].value===PersonalDetails!.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
   }
 }
