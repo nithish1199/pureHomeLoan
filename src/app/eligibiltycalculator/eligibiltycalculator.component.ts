@@ -7,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EligibiltycalculatorComponent implements OnInit {
 
-  input1!:number;
-  input2!:number;
   input3!:number;
+  //input3!:number;
   constructor() { }
 
   ngOnInit(): void {
   }
   getAnswer(){
-    this.input3=60*(this.input2*this.input1);
+    var input1=((document.getElementById("num1") as HTMLInputElement).value);
+    var input2=((document.getElementById("num2") as HTMLInputElement).value);
+    this.input3=60*parseInt(input1)*parseInt(input2);
 
   }
 

@@ -4,16 +4,15 @@
    
       <h1 class="text-center">Eligibilty Calculator</h1>
       Monthly income<div class="input-group input-group-sm col-sm-12 m-0 p-0">
-        <input type="number" style="width: 400px;">
+        <input type="number" id="num1" style="width: 400px;">
       </div>
       ROI<div class="input-group input-group-sm col-sm-12 m-0 p-0">
-        <input type="number" style="width: 400px;">
+        <input type="number" id="num2" style="width: 400px;">
       </div>
       <div style="margin-top: 10px;">
         <button class="btn btn-lg btn-success col-sm-6 p-1" type="button" (click)="getAnswer()">Calculate</button>
       </div>
-      Eligibility<div class="input-group input-group-sm col-sm-12 m-0 p-0">
-       <p>{{input3}}</p>
+      Eligibility<div type="number" class="input-group input-group-sm col-sm-12 m-0 p-0"> {{input3}}
       </div>
  </div>
  </div>  
