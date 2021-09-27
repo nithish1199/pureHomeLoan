@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { Ng5SliderModule } from 'ng5-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -26,7 +25,7 @@ import { ClickhereComponent } from './clickhere/clickhere.component';
 import { RecoverpasswordComponent } from './recoverpassword/recoverpassword.component';
 import { PasswordsuccessfulComponent } from './passwordsuccessful/passwordsuccessful.component';
 import { EligibiltycalculatorComponent } from './eligibiltycalculator/eligibiltycalculator.component';
-
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +54,9 @@ import { EligibiltycalculatorComponent } from './eligibiltycalculator/eligibilty
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    Ng5SliderModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

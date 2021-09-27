@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-apply',
   templateUrl: './apply.component.html',
   styleUrls: ['./apply.component.css']
 })
 export class ApplyComponent implements OnInit {
-
   PersonalDetails=new FormGroup({
     firstName:new FormControl("",[Validators.required]),
     lastName:new FormControl("",[Validators.required]),
