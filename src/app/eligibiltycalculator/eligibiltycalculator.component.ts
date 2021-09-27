@@ -6,10 +6,6 @@ import { LabelType, Options } from 'ng5-slider';
   styleUrls: ['./eligibiltycalculator.component.css']
 })
 export class EligibiltycalculatorComponent implements OnInit {
-
-  // input1!:number;
-  // input2!:number;
-  // input3!:number;
   filters: any;
   pemi:any= {
     value: "25"
