@@ -145,10 +145,6 @@ export class EligibiltycalculatorComponent implements OnInit {
     this.result.interest = interest.toFixed(0).toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  // getAnswer(){
 
-  //   this.input3=60*(this.input2*this.input1);
-
-  // }
 
 }
