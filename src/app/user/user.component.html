@@ -1,0 +1,31 @@
+<div class="content-wrapper">
+    <div class="content">
+<div [ngClass]="'style'">
+    
+    <form [formGroup]="LoginForm" >
+        <div class="container" >
+          <h1>Welcome!</h1>
+          <p>Please login to know the status of your loan</p>
+          <hr>
+
+          <p>
+            <label for="uname" ><b>Username</b></label>
+            <input type="text" id="uname" name="uname" formControlName="uname" />
+        </p>
+        
+        <p>
+            <label for="pass" ><b>Password</b></label>
+            <input type="text" id="pass" name="pass" formControlName="Password" />
+        </p>
+        
+
+          <a routerLink="/userdash"><button class="registerbtn" type="submit"> Login</button></a>
+        </div>
+      
+        <div class="container signin">
+          <p>Forgot Password? <a href="clickhere">Click here</a>.</p>
+        </div>
+        
+      </form>
+</div>
+</div>

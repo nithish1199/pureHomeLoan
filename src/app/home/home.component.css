@@ -71,9 +71,9 @@ label {
  * I want my pure-button elements to look a little different
  */
 .pure-button {
-    background-color: #1f8dd6;
+    background-color: #d12087;
     
-    color: #d12087;
+    color:white;
     padding: 0.5em 2em;
     border-radius: 5px;
 }
@@ -191,7 +191,7 @@ a.pure-button-primary {
     position: absolute;
     top: 87%;
     width: 100%;
-    /* min-height: 12%; */
+    min-height: 12%;
     z-index: 2;
     background: white;
 
@@ -235,6 +235,14 @@ a.pure-button-primary {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+.clm{
+    float: left;
+    width: 50%;
+    padding: 3px;
+}
+.clm img{
+    height: 200px;
 }
   
   
@@ -295,28 +303,3 @@ a.pure-button-primary {
         font-size: 300%;
     }
 }
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdown-content {display: block;}

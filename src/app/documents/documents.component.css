@@ -1,0 +1,46 @@
+.style{
+    padding-top: 70px;
+   text-align: center;
+   background-color: whitesmoke;
+  }
+
+  
+  .custom-file-input.selected:lang(en)::after {
+    content: "" !important;
+  }
+  
+  .custom-file {
+    overflow: hidden;
+  }
+  
+  .custom-file-input {
+    white-space: nowrap;
+  }
+
+  .registerbtn {
+    background-color: #d12087;
+    color: white;
+    padding: 16px 20px;
+    margin: 2px 0px;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+  }
+
+  input[type=file] {
+    margin: 0 auto;
+}
+
+.newbtn{
+  margin-top: 10px; 
+  width: 30%; 
+  background-color: lightsteelblue;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 5px solid darkgray; 
+  padding: 10px;
+  }

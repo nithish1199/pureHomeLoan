@@ -1,0 +1,29 @@
+<div class="content-wrapper">
+    <div class="content">
+<div [ngClass]="'style'">
+    
+    <form [formGroup]="ForgotPassword" >
+        <div class="container" >
+          <h1>Welcome!</h1>
+          <p>Please enter email id to recover the password</p>
+          <hr>
+
+          <p>
+            <label for="email" ><b>Email ID</b></label>
+            <input type="text" id="email" name="email" formControlName="Email" />
+        </p>
+        
+        <p>
+            <label for="otp" ><b>Enter OTP</b></label>
+            <input type="text" id="otp" name="otp" formControlName="OTP" />
+        </p>
+        
+
+          <a routerLink="/recoverpassword"><button class="registerbtn" type="submit"> Submit</button></a>
+        </div>
+      
+        
+        
+      </form>
+</div>
+</div>
