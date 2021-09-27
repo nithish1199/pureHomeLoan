@@ -73,8 +73,8 @@ export class ApplyComponent implements OnInit {
   {
     return this.PersonalDetails.get('PanNumber');
   }
+
   passwordMatchValidator(PersonalDetails:FormGroup){
     return PersonalDetails.controls['Password'].value===PersonalDetails!.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
   }
- 
 }

@@ -25,6 +25,7 @@ import { ApprovedComponent } from './approved/approved.component';
 import { ClickhereComponent } from './clickhere/clickhere.component';
 import { RecoverpasswordComponent } from './recoverpassword/recoverpassword.component';
 import { PasswordsuccessfulComponent } from './passwordsuccessful/passwordsuccessful.component';
+import { EligibiltycalculatorComponent } from './eligibiltycalculator/eligibiltycalculator.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PasswordsuccessfulComponent } from './passwordsuccessful/passwordsucces
     ApprovedComponent,
     ClickhereComponent,
     RecoverpasswordComponent,
-    PasswordsuccessfulComponent
+    PasswordsuccessfulComponent,
+    EligibiltycalculatorComponent
   ],
   imports: [
     BrowserModule,

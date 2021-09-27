@@ -7,6 +7,7 @@ import { ApplyComponent } from './apply/apply.component';
 import { ApprovedComponent } from './approved/approved.component';
 import { ClickhereComponent } from './clickhere/clickhere.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { EligibiltycalculatorComponent } from './eligibiltycalculator/eligibiltycalculator.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { IncomedetailsComponent } from './incomedetails/incomedetails.component';
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path:'approved',component:ApprovedComponent},
   {path:'clickhere',component:ClickhereComponent},
   {path:'recoverpassword',component:RecoverpasswordComponent},
-  {path:'passwordsuccessful',component:PasswordsuccessfulComponent}
+  {path:'passwordsuccessful',component:PasswordsuccessfulComponent},
+  {path:'eligibiltycalculator',component:EligibiltycalculatorComponent}
 ];
 
 @NgModule({
