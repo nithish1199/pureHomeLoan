@@ -10,6 +10,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class ApplyComponent implements OnInit {  
   PersonalDetails=new FormGroup({
+
     username:new FormControl("",[Validators.required]),
     FirstName:new FormControl("",[Validators.required]),
     LastName:new FormControl("",[Validators.required]),
@@ -91,6 +92,7 @@ export class ApplyComponent implements OnInit {
       sessionStorage.setItem('username',this.PersonalDetails.controls.username.value)
       this.route.navigate(['incomedetails'])
     })
+    this.route.navigate(['incomedetails'])
 
   }
 }
