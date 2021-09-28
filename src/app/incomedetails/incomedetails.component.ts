@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { PersonaldetailsService } from '../personaldetails.service';
 import { Router,ActivatedRoute } from '@angular/router';
 @Component({
@@ -20,6 +20,7 @@ export class IncomedetailsComponent implements OnInit {
       PropertyName: new FormControl('',[Validators.required]),
       EstimatedAmount: new FormControl('',[Validators.required]),
       TypeOfEmployment: new FormControl('',[Validators.required]),
+      Salary:new FormControl(),
       RetirementAge: new FormControl('',[Validators.required]),
       OrganizationType: new FormControl('',[Validators.required]),
       EmployerName: new FormControl('',[Validators.required]),
@@ -35,6 +36,9 @@ export class IncomedetailsComponent implements OnInit {
     this.service.incomedetails(this.IncomeDetails.value).subscribe(res=>{
       console.log(res)
       console.log("personal details saved!")
+      sessionStorage.setItem('salary',this.IncomeDetails.controls.Salary.value);
+      sessionStorage.setItem('estamt',this.IncomeDetails.controls.EstimatedAmount.value);
+      this.route.navigate(['loandetails'])
     })
 
   }
