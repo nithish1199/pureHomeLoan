@@ -10,7 +10,7 @@ import{catchError} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PersonaldetailsService {
-  private apiServer="http://localhost:3751/api";
+  private apiServer="http://localhost:27614/api";
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
