@@ -7,17 +7,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./loandetails.component.css']
 })
 export class LoandetailsComponent implements OnInit {
-
-  LoanDetails=new FormGroup({
-    maxAmountGrantable:new FormControl(),
-    InterestRate:new FormControl(),
-    Tenure:new FormControl(),
-    LoanAmount:new FormControl(),
-  }
-  );
+  LoanDetails!:FormGroup;
+  username:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.username=sessionStorage.getItem('username')
+    this.LoanDetails=new FormGroup({
+      maxAmountGrantable:new FormControl(),
+      InterestRate:new FormControl(),
+      Tenure:new FormControl(),
+      LoanAmount:new FormControl(),
+    }
+    );
   }
 
 }
