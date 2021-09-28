@@ -1,4 +1,7 @@
- <div class="container" style="margin-top: 200px;">
+
+ 
+
+<div class="container" style="margin-top: 200px;">
   <div class="spacer">
     <div class="row">
       <div class="col-lg-8  col-lg-offset-1">
@@ -12,8 +15,8 @@
               <input type="text" style="width:44%;float:right;" class="form-control" (blur)="tbupdate(0)"
                 [(ngModel)]="query.amount" placeholder="Loan Amount" name="pemi.highValue" />
             </div>
-            <ng5-slider [(value)]="pemi.value" [options]="poptions" (userChangeEnd)="update()">
-            </ng5-slider>
+            <ngx-slider [(value)]="pemi.value" [options]="poptions" (userChangeEnd)="update()">
+            </ngx-slider>
             
           </div>
 
@@ -51,8 +54,8 @@
             </div>
             <ng5-slider *ngIf="yrToggel" [(value)]="temi.value" [options]="toptions" (userChangeEnd)="update()">
             </ng5-slider>
-            <ng5-slider *ngIf="!yrToggel" [(value)]="memi.value" [options]="moptions" (userChangeEnd)="update()">
-            </ng5-slider>
+            <ngx-slider *ngIf="!yrToggel" [(value)]="memi.value" [options]="moptions" (userChangeEnd)="update()">
+            </ngx-slider>
           </div>
 
 
