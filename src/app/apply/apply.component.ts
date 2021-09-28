@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PersonaldetailsService } from '../personaldetails.service';
 import { Personaldetails } from '../personaldetails';
-
+import { Router,ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-apply',
   templateUrl: './apply.component.html',
@@ -26,7 +26,7 @@ export class ApplyComponent implements OnInit {
   }
     //{validators:this.passwordMatchValidator}
   );
-  constructor(private service:PersonaldetailsService) { }
+  constructor(private service:PersonaldetailsService,private route:Router) { }
 
   ngOnInit(): void { }
   get username()
@@ -87,6 +87,9 @@ export class ApplyComponent implements OnInit {
     this.service.personaldetails(this.PersonalDetails.value).subscribe(res=>{
       console.log(res)
       console.log("personal details saved!")
+      this.route.navigate(['incomedetails'])
+      sessionStorage.setItem('username',this.PersonalDetails.controls.username.value)
+      this.route.navigate(['incomedetails'])
     })
 
   }

@@ -4,8 +4,7 @@ import { Personaldetails } from './personaldetails';
 import { ErrorHandler } from '@angular/core';
 import{HttpClient,HttpHeaders,HttpErrorResponse} from "@angular/common/http";
 import{catchError} from 'rxjs/operators';
-
-
+import { IncomeDetails } from './income-details';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +20,12 @@ export class PersonaldetailsService {
 
   personaldetails(priregister:any):Observable<Personaldetails>{
     return this.httpClient.post<Personaldetails>(this.apiServer+'/PersonalDetails/',JSON.stringify(priregister),this.httpOptions)
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+  incomedetails(incomedetails:any):Observable<IncomeDetails>{
+    return this.httpClient.post<IncomeDetails>(this.apiServer+'/IncomeDetails/',JSON.stringify(incomedetails),this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
