@@ -90,9 +90,9 @@ export class ApplyComponent implements OnInit {
       console.log("personal details saved!")
       this.route.navigate(['incomedetails'])
       sessionStorage.setItem('username',this.PersonalDetails.controls.username.value)
+      console.log(sessionStorage.getItem('username'))
       this.route.navigate(['incomedetails'])
     })
-    this.route.navigate(['incomedetails'])
 
   }
 }
