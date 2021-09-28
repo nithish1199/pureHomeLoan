@@ -88,11 +88,9 @@ export class ApplyComponent implements OnInit {
     this.service.personaldetails(this.PersonalDetails.value).subscribe(res=>{
       console.log(res)
       console.log("personal details saved!")
-      this.route.navigate(['incomedetails'])
       sessionStorage.setItem('username',this.PersonalDetails.controls.username.value)
       this.route.navigate(['incomedetails'])
     })
-    this.route.navigate(['incomedetails'])
 
   }
 }
