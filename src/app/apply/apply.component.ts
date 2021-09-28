@@ -1,21 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { PersonaldetailsService } from '../personaldetails.service';
+import { Personaldetails } from '../personaldetails';
 
 @Component({
   selector: 'app-apply',
   templateUrl: './apply.component.html',
   styleUrls: ['./apply.component.css']
 })
-export class ApplyComponent implements OnInit {
+export class ApplyComponent implements OnInit {  
   PersonalDetails=new FormGroup({
-    firstName:new FormControl("",[Validators.required]),
-    lastName:new FormControl("",[Validators.required]),
-    middleName:new FormControl(),
-    Email:new FormControl("",[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-    Password:new FormControl("", [Validators.required, Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]),
+
+    username:new FormControl("",[Validators.required]),
+    FirstName:new FormControl("",[Validators.required]),
+    LastName:new FormControl("",[Validators.required]),
+    MiddleName:new FormControl(),
+    EmailId:new FormControl("",[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+    password:new FormControl("", [Validators.required, Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]),
     ConfirmPassword:new FormControl("", [Validators.required]),
-    MobileNumber:new FormControl("", [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-    DateofBirth:new FormControl(),
+    PhoneNumber:new FormControl("", [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+    DateOfBirth:new FormControl(),
     Gender:new FormControl(),
     Nationality:new FormControl(null,[Validators.required]),
     AadharNumber:new FormControl(null,[Validators.required]),
@@ -23,58 +27,68 @@ export class ApplyComponent implements OnInit {
   }
   //{validators:this.passwordMatchValidator}
   );
-  constructor() { }
+  constructor(private service:PersonaldetailsService) { }
 
-  ngOnInit(): void {
-  }
-
-  get firstname()
+  ngOnInit(): void { }
+  get username()
   {
-    return this.PersonalDetails.get('firstName');
+    return this.PersonalDetails.get('username');
   }
 
-  get middlename()
+  get FirstName()
   {
-    return this.PersonalDetails.get('middleName');
+    return this.PersonalDetails.get('FirstName');
   }
-  get lastname()
+
+  get MiddleName()
   {
-    return this.PersonalDetails.get('lastName');
+    return this.PersonalDetails.get('MiddleName');
   }
-  get email()
+  get LastName()
   {
-    return this.PersonalDetails.get('Email');
+    return this.PersonalDetails.get('LastName');
   }
-  get phonenumber()
+  get EmailId()
   {
-    return this.PersonalDetails.get('MobileNumber');
+    return this.PersonalDetails.get('EmailId');
+  }
+  get PhoneNumber()
+  {
+    return this.PersonalDetails.get('PhoneNumber');
   }
   get password()
   {
-    return this.PersonalDetails.get('Password');
+    return this.PersonalDetails.get('password');
   }
-  get confirmpassword()
+  get ConfirmPassword()
   {
-    return this.PersonalDetails.get('ConfirmPassword');
-  }
-  get gender()
-  {
-    return this.PersonalDetails.get('Gender');
-  }
-  get nationality()
+     return this.PersonalDetails.get('ConfirmPassword');
+  }  
+  get Nationality()
   {
     return this.PersonalDetails.get('Nationality');
   }
-  get adharnumber()
+  get AadharNumber()
   {
     return this.PersonalDetails.get('AadharNumber');
   }
-  get pannumber()
+  get PanNumber()
   {
     return this.PersonalDetails.get('PanNumber');
   }
 
   passwordMatchValidator(PersonalDetails:FormGroup){
-    return PersonalDetails.controls['Password'].value===PersonalDetails!.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
+    return PersonalDetails.controls['password'].value===PersonalDetails!.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
+  }
+  submitperdetails()
+  {
+    // this.PersonalDetails=this.InsertForm.value
+    console.log("hi");
+    console.log(this.PersonalDetails.value)
+    this.service.personaldetails(this.PersonalDetails.value).subscribe(res=>{
+      console.log(res)
+      console.log("personal details saved!")
+    })
+
   }
 }

@@ -26,6 +26,8 @@ import { RecoverpasswordComponent } from './recoverpassword/recoverpassword.comp
 import { PasswordsuccessfulComponent } from './passwordsuccessful/passwordsuccessful.component';
 import { EligibiltycalculatorComponent } from './eligibiltycalculator/eligibiltycalculator.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ReactiveFormsModule,
     NgbModule,
     Ng5SliderModule,
-    NgxSliderModule
+    NgxSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
