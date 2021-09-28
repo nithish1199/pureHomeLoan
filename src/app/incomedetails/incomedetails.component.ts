@@ -34,8 +34,9 @@ export class IncomedetailsComponent implements OnInit {
     console.log(this.IncomeDetails.value)
     this.service.incomedetails(this.IncomeDetails.value).subscribe(res=>{
       console.log(res)
-      console.log("personal details saved!")
+      console.log("income details saved!")
     })
+    this.route.navigate(['loandetails'])
 
   }
 
