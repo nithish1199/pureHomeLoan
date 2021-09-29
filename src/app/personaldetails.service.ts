@@ -10,7 +10,10 @@ import { LoanDetails } from './loan-details';
   providedIn: 'root'
 })
 export class PersonaldetailsService {
-  private apiServer="http://localhost:3751/api";
+  userlogin(value: any) {
+    throw new Error('Method not implemented.');
+  }
+  private apiServer="http://localhost:27614/api";
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
@@ -25,18 +28,28 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
+
+
   incomedetails(incomedetails:any):Observable<IncomeDetails>{
     return this.httpClient.post<IncomeDetails>(this.apiServer+'/IncomeDetails/',JSON.stringify(incomedetails),this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }
+
+
   loandetails(loandetails:any):Observable<LoanDetails>{
     return this.httpClient.post<LoanDetails>(this.apiServer+'/LoanDetails/',JSON.stringify(loandetails),this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }
+
+  login(register:Personaldetails){
+    return this.httpClient.post(this.apiServer + '/Userdash', JSON.stringify(register), this.httpOptions)
+    
+  } 
+
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
