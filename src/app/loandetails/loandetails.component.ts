@@ -41,5 +41,6 @@ export class LoandetailsComponent implements OnInit {
       console.log(res)
       console.log("Loan details saved!")
     })
+    this.route.navigate(['documents'])
   }
 }

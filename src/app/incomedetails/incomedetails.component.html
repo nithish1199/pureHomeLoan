@@ -1,4 +1,4 @@
-<div class="content-wrapper center" style="width: 65%;">
+<div class="content-wrapper center" style="width: 50%;">
     <div [ngClass]="'style'">
         <form [formGroup]="IncomeDetails" (ngSubmit)="SubmitIncome()">
             <div class="container">
@@ -31,7 +31,7 @@
 
                 <p>
                     <label for="emp"><b>Type of Employment</b></label><br>
-                    <select id="emp" name="emp" formControlName="TypeOfEmployment">
+                    <select id="emp" name="emp" formControlName="TypeOfEmployment" class="select">
                         <option value="Salaried">Salaried</option>
                         <option value="Self-Employed">Self Employed</option>
                     </select>
@@ -54,7 +54,7 @@
                     <label for="ename"><b>Employer Name</b></label>
                     <input type="text" id="ename" name="ename" formControlName="EmployerName" />
                 </p>
-                <input class="registerbtn" type="submit" values="Save and Next" style="margin-right: 20px;">
+                <button class="registerbtn" type="submit"> Save and Next </button>
             </div>
             <p>By applying here you agree to our <a href="#">Terms & Privacy</a>.</p>
         </form>

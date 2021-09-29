@@ -2,7 +2,7 @@
     <div class="content">
 <div [ngClass]="'style'">
     
-    <form [formGroup]="LoginForm" >
+    <form [formGroup]="LoginForm" (click)="submit()">
         <div class="container" >
           <h1>Welcome!</h1>
           <p>Please login to know the status of your loan</p>
@@ -19,9 +19,9 @@
         </p>
         
 
-          <a routerLink="/userdash"><button class="registerbtn" type="submit"> Login</button></a>
+          <button class="registerbtn" type="submit"> Login</button>
         </div>
-      
+      {{message}}
         <div class="container signin">
           <p>Forgot Password? <a href="clickhere">Click here</a>.</p>
         </div>

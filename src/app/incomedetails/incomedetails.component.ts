@@ -35,14 +35,10 @@ export class IncomedetailsComponent implements OnInit {
     console.log(this.IncomeDetails.value)
     this.service.incomedetails(this.IncomeDetails.value).subscribe(res=>{
       console.log(res)
-<<<<<<< HEAD
-      console.log("income details saved!")
-=======
       console.log("personal details saved!")
       sessionStorage.setItem('salary',this.IncomeDetails.controls.Salary.value);
       sessionStorage.setItem('estamt',this.IncomeDetails.controls.EstimatedAmount.value);
       this.route.navigate(['loandetails'])
->>>>>>> 5c34454566ae6789a5f13df9cca5e841e0ebc6a8
     })
     this.route.navigate(['loandetails'])
 

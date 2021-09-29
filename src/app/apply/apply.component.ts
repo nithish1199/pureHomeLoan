@@ -9,6 +9,7 @@ import { Router,ActivatedRoute } from '@angular/router';
   styleUrls: ['./apply.component.css']
 })
 export class ApplyComponent implements OnInit {  
+  message!:string;
   PersonalDetails=new FormGroup({
 
     username:new FormControl("",[Validators.required]),
@@ -90,7 +91,9 @@ export class ApplyComponent implements OnInit {
       console.log("personal details saved!")
       sessionStorage.setItem('username',this.PersonalDetails.controls.username.value)
       this.route.navigate(['incomedetails'])
-    })
+    },
+    error=>this.message="Username already taken"
+    )
 
   }
 }

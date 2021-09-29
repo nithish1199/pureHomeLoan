@@ -1,4 +1,4 @@
-<div class="content-wrapper center" style="width: 65%;">
+<div class="content-wrapper center" style="width: 50%;">
   <div class="content">
     <div [ngClass]="'style'">
       <div class="container">
@@ -7,17 +7,51 @@
             <h1>Personal Details</h1>
             <p>Please fill in this form to apply for loan.</p>
             <hr>
-            <p>
+            <p >
+              Choose a username which may contain alphabets or numbers or combination of both.
+              Make sure you remember this to login to the system.<br>
               <label for="uname" class="label"><b>UserName</b></label>
               <input type="text" id="username" name="username" formControlName="username" />
+              {{message}}
             </p>
+            Make sure you remember this password to login to the system.
             <div *ngIf="!username?.valid && (username?.dirty || username?.touched)" class="error">
               <div *ngIf="username!.errors!.required">
                 <p style="color: crimson; font-size: small; ">FirstName is required</p>
               </div>
             </div>
+            <p>
+              <label for="pass"><b>Password</b></label>
+              <input type="text" id="pass" name="pass" formControlName="password" />
+            </p>
+            <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="pass">
+              <div *ngIf="password!.errors!.required">
+                <b style="color: crimson; font-size: small;">Password is required.</b>
+              </div>
+              <div *ngIf="password!.errors!.pattern">
+                <b style="color: crimson; font-size: small;">Invalid Password. <ul>Password must have atleast 8
+                    characters.</ul>
+                  <ul>Password must contain atleast one uppercase letter</ul>
+                  <ul>Password must contain atleast one lowercase letter</ul>
+                  <ul>Password must contain atleast one number</ul>
+                  <ul>Password must contain atleast one special character</ul>
+                </b>
+
+              </div>
+            </div>
 
             <p>
+              <label for="cpass"><b>Confirm Password</b></label>
+              <input type="text" id="cpass" name="cpass" formControlName="ConfirmPassword" />
+            </p>
+            <div *ngIf="!ConfirmPassword?.valid && (ConfirmPassword?.dirty || ConfirmPassword?.touched)" class="error">
+              <div *ngIf="ConfirmPassword!.errors!.required">Passwords must be same.</div>
+              <div *ngIf="PersonalDetails.errors!.mismatch && (ConfirmPassword!.dirty || ConfirmPassword!.touched)">
+                Passwords don't match.
+              </div>
+              </div>
+            <p>
+              Please start filling your personal details for HOME LOAN Application:
               <label for="fname" class="label"><b>First Name:</b></label>
               <input type="text" id="FirstName" name="FirstName" formControlName="FirstName" />
             </p>
@@ -55,38 +89,7 @@
               </div>
             </div>
 
-            <p>
-              <label for="pass"><b>Password</b></label>
-              <input type="text" id="pass" name="pass" formControlName="password" />
-            </p>
-            <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="pass">
-              <div *ngIf="password!.errors!.required">
-                <b style="color: crimson; font-size: small;">Password is required.</b>
-              </div>
-              <div *ngIf="password!.errors!.pattern">
-                <b style="color: crimson; font-size: small;">Invalid Password. <ul>Password must have atleast 8
-                    characters.</ul>
-                  <ul>Password must contain atleast one uppercase letter</ul>
-                  <ul>Password must contain atleast one lowercase letter</ul>
-                  <ul>Password must contain atleast one number</ul>
-                  <ul>Password must contain atleast one special character</ul>
-                </b>
-
-              </div>
-            </div>
-
-            <p>
-              <label for="cpass"><b>Confirm Password</b></label>
-              <input type="text" id="cpass" name="cpass" formControlName="ConfirmPassword" />
-            </p>
-            <div *ngIf="!ConfirmPassword?.valid && (ConfirmPassword?.dirty || ConfirmPassword?.touched)" class="error">
-              <div *ngIf="ConfirmPassword!.errors!.required">Passwords must be same.</div>
-              <div *ngIf="PersonalDetails.errors!.mismatch && (ConfirmPassword!.dirty || ConfirmPassword!.touched)">
-                Passwords don't match.
-              </div>
-              </div>
-              
-
+            
               <p>
                 <label for="mno"><b>Mobile Number</b></label>
                 <input type="number" id="mno" name="mno" formControlName="PhoneNumber" />

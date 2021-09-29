@@ -13,6 +13,8 @@ import { ConstantPool } from '@angular/compiler';
 })
 export class UserComponent implements OnInit {
 
+  message!:string;
+  register!:Personaldetails;
   LoginForm=new FormGroup({
     Username:new FormControl(),
     Password:new FormControl()
@@ -21,15 +23,22 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  userlogin()
-  {
-    console.log(this.LoginForm)
-    this.service.userlogin(this.LoginForm.value).subscribe(res=>{
-      console.log(res)
-      console.log('login successful')
-      this.router.navigateByUrl('userdash');
-    })
 
+  submit()
+  {
+    // this.register=this.LoginForm.value
+    // console.log(this.register)
+
+    this.service.login(this.LoginForm.value).subscribe(res => {
+      console.log(res)
+      console.log('Login successful')
+      this.router.navigate(['userdash'])
+    },
+    error=>this.message="Incorrect details"
+    
+    );
+
+    
   }
 
 }
