@@ -46,7 +46,7 @@ export class PersonaldetailsService {
   }
 
   login(register:Personaldetails){
-    return this.httpClient.post(this.apiServer + '/Userdash', JSON.stringify(register), this.httpOptions)
+    return this.httpClient.post(this.apiServer + '/PersonalDetails/login/', JSON.stringify(register), this.httpOptions)
     
   } 
 
