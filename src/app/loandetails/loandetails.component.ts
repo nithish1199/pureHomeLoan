@@ -24,16 +24,17 @@ export class LoandetailsComponent implements OnInit {
     this.maxamt=Number(this.estamt)*0.85
     this.loanamt=60*0.6*Number(this.salary);
     this.LoanDetails=new FormGroup({
-      ApplicationID:new FormControl(),
+      ApplicationID:new FormControl(2233),
       Username:new FormControl(this.username),
       MaxLoanAmountGrantable:new FormControl(Number(this.maxamt)),
-      InterestRate:new FormControl(6.7),
+      InterestRate:new FormControl(7),
       Tenure:new FormControl(),
       LoanAmount:new FormControl(Number(this.loanamt)),
-      LoanStartDate:new FormControl('')
+      LoanStartDate:new FormControl()
     }
     );
   }
+  
   SubmitLoan(){
     console.log("hi");
     console.log(this.LoanDetails.value)
