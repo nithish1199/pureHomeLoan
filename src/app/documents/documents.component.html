@@ -5,9 +5,10 @@
     <!-- <label class="form-label" for="customFile">Document Upload</label> -->
     <p style="margin-top: 10px;">
     <label >Pan Card</label>
-    <input type="file" class="form-control newbtn" id="customFile1" style="margin-top: 10px;"/>
+    <input type="file" (change)="onFileSelected($event)" class="form-control newbtn" id="customFile1" style="margin-top: 10px;"/>
+    <input type="button" value="upload" (click)="onUpload()">
     </p>
-    <p>
+    <!-- <p>
         <label >Voter ID</label>
 
         <input type="file" class="form-control newbtn" id="customFile2"  />
@@ -40,7 +41,7 @@
 
         <input type="file" class="form-control newbtn" id="customFile6" style="margin-top: 10px;" />
 
-    </p>
+    </p> -->
     <a routerLink="/application"><button class="registerbtn" type="submit"> SUBMIT </button></a>
     
 
