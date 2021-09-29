@@ -13,7 +13,7 @@ export class PersonaldetailsService {
   userlogin(value: any) {
     throw new Error('Method not implemented.');
   }
-  private apiServer="http://localhost:27614/api";
+  private apiServer="http://localhost:3751/api";
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
