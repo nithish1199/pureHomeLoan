@@ -40,7 +40,6 @@ export class IncomedetailsComponent implements OnInit {
       sessionStorage.setItem('estamt',this.IncomeDetails.controls.EstimatedAmount.value);
       this.route.navigate(['loandetails'])
     })
-    this.route.navigate(['loandetails'])
 
   }
 
