@@ -27,7 +27,7 @@ export class LoandetailsComponent implements OnInit {
       ApplicationID:new FormControl(2233),
       Username:new FormControl(this.username),
       MaxLoanAmountGrantable:new FormControl(Number(this.maxamt)),
-      InterestRate:new FormControl(7),
+      InterestRate:new FormControl(6.7),
       Tenure:new FormControl(),
       LoanAmount:new FormControl(Number(this.loanamt)),
       LoanStartDate:new FormControl()
@@ -41,6 +41,7 @@ export class LoandetailsComponent implements OnInit {
     this.service.loandetails(this.LoanDetails.value).subscribe(res=>{
       console.log(res)
       console.log("Loan details saved!")
+      this.route.navigate(['documents'])
     })
   }
 }
