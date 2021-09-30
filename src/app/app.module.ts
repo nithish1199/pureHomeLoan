@@ -27,6 +27,8 @@ import { PasswordsuccessfulComponent } from './passwordsuccessful/passwordsucces
 import { EligibiltycalculatorComponent } from './eligibiltycalculator/eligibiltycalculator.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
+import { LoantrackerComponent } from './loantracker/loantracker.component';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { HttpClientModule } from '@angular/common/http';
     ClickhereComponent,
     RecoverpasswordComponent,
     PasswordsuccessfulComponent,
-    EligibiltycalculatorComponent
+    EligibiltycalculatorComponent,
+    LoantrackerComponent
+ 
   ],
   imports: [
     BrowserModule,

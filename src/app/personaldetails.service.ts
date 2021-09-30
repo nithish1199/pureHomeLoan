@@ -7,6 +7,7 @@ import{catchError} from 'rxjs/operators';
 import { IncomeDetails } from './income-details';
 import { LoanDetails } from './loan-details';
 import { ApplicationDetails } from './application-details';
+import { Account } from './account';
 @Injectable({
   providedIn: 'root'
 })
@@ -45,6 +46,12 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
+  //  accountdetails():Observable<Account[]>{
+  //    return this.httpClient.get<Account[]>(this.apiServer+'/UserDashBoard/')
+  // }
+   accountdetailsByUserName(username: any):Observable<Account>{
+    return this.httpClient.get<Account>(this.apiServer+'/UserDashBoard/'+username)
+   }
 
   login(register:Personaldetails){
     return this.httpClient.post(this.apiServer + '/PersonalDetails/login/', JSON.stringify(register), this.httpOptions)

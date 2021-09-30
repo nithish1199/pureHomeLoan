@@ -1,0 +1,49 @@
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    margin: 150px 155px 1px 165px;
+    padding: 10px;
+}
+.msg{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.details{
+  display: flex;
+  justify-content: center;
+}
+table {
+  table-layout: fixed;
+  width: 550px;
+  height: 250px;
+  
+}
+.button {
+  background-color: #e747a4;
+  border: none;
+  color: white;
+  padding: 16px 20px;
+  display: inline-block;
+  text-align: center; 
+  text-decoration: none;
+  cursor: pointer;
+width: 150px;
+  
+}
+.button:hover {
+  opacity:2;
+}
+.logout{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+
+
+  
+
+  

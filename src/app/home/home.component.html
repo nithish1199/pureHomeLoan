@@ -6,7 +6,7 @@
             Combine the Joy of Festivities with a joy of new Home
         </p> -->
         <p>
-            <a href="#" class="pure-button pure-button-primary" style="margin-top: 250px;">Apply Now</a>
+            <a routerLink="apply" class="pure-button pure-button-primary" style="margin-top: 250px;">Apply Now</a>
         </p>
     </div>
 </div>
@@ -26,10 +26,10 @@
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
+               <a routerLink="loantracker"><h3 class="content-subhead">
                     <i class="fa fa-mobile"></i>
                     TrackMyLoan
-                </h3>
+                </h3></a> 
                 <p>
                     Facilities to check the status of the loan on the go via loan tracker.
                 </p>
@@ -116,7 +116,7 @@
                          <a  href="#"><img  src="/assets/eli1.png" alt="" style="width:200px;margin-left: 140px;margin-top: 10px;"></a>
                      </div>
                      <div class="clm">
-                        <a href='#'><img src="/assets/emi1.png" alt="" style="width: 200px;margin-left: 50px;"></a>
+                        <button class="emi" (click)="emiCalculator()"><img src="/assets/emi1.png" alt="" style="width: 200px;margin-left: 50px;"></button>
                     </div> 
                  </div>
                  
