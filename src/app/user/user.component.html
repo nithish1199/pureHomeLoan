@@ -2,16 +2,12 @@
     <div class="content">
 <div [ngClass]="'style'">
     
-<<<<<<< HEAD
-    <form [formGroup]="LoginForm" (ngSubmit)="Login()">
-=======
     <form [formGroup]="LoginForm" (ngSubmit)="submit()">
->>>>>>> b7f1a09d1d16374ba14fd7cff77246dffe0f8183
         <div class="container" >
           <h1>Welcome!</h1>
           <p>Please login to know the status of your loan</p>
           <hr>
-          <div ><b style="color: crimson;">{{msg}}</b></div>
+          <div ><b style="color: crimson;">{{message}}</b></div>
           <p>
             <label for="uname" ><b>Username</b></label>
             <input type="text" id="uname" name="uname" formControlName="Username" />
