@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaldetailsService } from '../personaldetails.service';
-import { Personaldetails } from '../personaldetails';
-
 
 @Component({
   selector: 'app-application',
@@ -9,13 +7,12 @@ import { Personaldetails } from '../personaldetails';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent implements OnInit {
-ApplicationID:any
-  
-  constructor() { }
+  username:any;
+  appid:any;
+  constructor(private service:PersonaldetailsService) { }
 
   ngOnInit(): void {
-    
-
+    this.appid=sessionStorage.getItem('appid');
   }
 
 }

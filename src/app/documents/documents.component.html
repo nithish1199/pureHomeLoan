@@ -1,0 +1,47 @@
+<div class="content-wrapper center" style="width: 50%;">
+
+    <div [ngClass]="'style'">
+        <h1>Documents Upload</h1>
+        <!-- <label class="form-label" for="customFile">Document Upload</label> -->
+        <p style="margin-top: 10px;">
+            <label for="customFile1">Pan Card</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control newbtn" id="customFile1"
+                style="margin-top: 10px;" />
+            <input type="button" value="upload" (click)="onUpload()">
+        </p>
+        <p style="margin-top: 10px;">
+            <label for="customFile2">Voter ID</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control newbtn" id="customFile2"
+                style="margin-top: 10px;" />
+            <input type="button" value="upload" (click)="onUpload()">
+        </p>
+        <p style="margin-top: 10px;">
+            <label for="customFile3">Salary Slip</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control newbtn" id="customFile3"
+                style="margin-top: 10px;" />
+            <input type="button" value="upload" (click)="onUpload()">
+        </p>
+        <p style="margin-top: 10px;">
+            <label for="customFile4">LOA</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control newbtn" id="customFile4"
+                style="margin-top: 10px;" />
+            <input type="button" value="upload" (click)="onUpload()">
+        </p>
+        <p style="margin-top: 10px;">
+            <label for="customFile5">NOC from Builder</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control newbtn" id="customFile5"
+                style="margin-top: 10px;" />
+            <input type="button" value="upload" (click)="onUpload()">
+        </p>
+        <p style="margin-top: 10px;">
+            <label for="customFile6">Agreement to Sale</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control newbtn" id="customFile6"
+                style="margin-top: 10px;" />
+            <input type="button" value="upload" (click)="onUpload()">
+        </p>
+       
+        <button class="registerbtn"  type="submit" (click)="submitApp()"> SUBMIT </button>
+
+
+    </div>
+</div>

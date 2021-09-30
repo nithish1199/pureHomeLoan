@@ -6,16 +6,14 @@ import{HttpClient,HttpHeaders,HttpErrorResponse} from "@angular/common/http";
 import{catchError} from 'rxjs/operators';
 import { IncomeDetails } from './income-details';
 import { LoanDetails } from './loan-details';
-
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaldetailsService {
-  
   userlogin(value: any) {
     throw new Error('Method not implemented.');
   }
-  private apiServer="http://localhost:27614/api";
+  private apiServer="http://localhost:3751/api";
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
@@ -48,11 +46,15 @@ export class PersonaldetailsService {
   }
 
   login(register:Personaldetails){
-    return this.httpClient.post(this.apiServer + '/PersonalDetails/Login/', JSON.stringify(register), this.httpOptions)
+    return this.httpClient.post(this.apiServer + '/PersonalDetails/login/', JSON.stringify(register), this.httpOptions)
     
   } 
+  GetId(name:string){
+    return this.httpClient.get<number>(this.apiServer+'/LoanDetails/'+name);
+  }
 
-  
+
+
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';

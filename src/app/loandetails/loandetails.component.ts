@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router,ActivatedRoute} from '@angular/router';
 import { PersonaldetailsService } from '../personaldetails.service';
-
 @Component({
   selector: 'app-loandetails',
   templateUrl: './loandetails.component.html',
