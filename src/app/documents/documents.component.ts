@@ -14,6 +14,7 @@ export class DocumentsComponent implements OnInit {
   username: any;
   appid: any
   ngOnInit(): void {
+    this.username=sessionStorage.getItem('username')
   }
   onFileSelected(event: any) {
     this.username = sessionStorage.getItem('username')

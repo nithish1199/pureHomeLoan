@@ -8,6 +8,7 @@ import { PersonaldetailsService } from '../personaldetails.service';
   styleUrls: ['./loandetails.component.css']
 })
 export class LoandetailsComponent implements OnInit {
+  
   LoanDetails!:FormGroup;
   username:any;
   estamt:any;
@@ -42,5 +43,7 @@ export class LoandetailsComponent implements OnInit {
       console.log("Loan details saved!")
       this.route.navigate(['documents'])
     })
+
+   
   }
 }
