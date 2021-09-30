@@ -36,6 +36,7 @@ export class DocumentsComponent implements OnInit {
       this.appid = data
       sessionStorage.setItem('appid', this.appid)
     })
+    this.route.navigate(['application'])
   }
 
 }
