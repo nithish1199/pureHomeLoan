@@ -6,11 +6,13 @@ import{HttpClient,HttpHeaders,HttpErrorResponse} from "@angular/common/http";
 import{catchError} from 'rxjs/operators';
 import { IncomeDetails } from './income-details';
 import { LoanDetails } from './loan-details';
+import { Account } from './account';
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaldetailsService {
   private apiServer="http://localhost:3751/api";
+  
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
@@ -25,6 +27,9 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
+  Login(user: Personaldetails) {
+    return this.httpClient.post(this.apiServer+'/PersonalDetails/Login/', JSON.stringify(user), this.httpOptions);
+  }
   incomedetails(incomedetails:any):Observable<IncomeDetails>{
     return this.httpClient.post<IncomeDetails>(this.apiServer+'/IncomeDetails/',JSON.stringify(incomedetails),this.httpOptions)
     .pipe(
@@ -37,6 +42,12 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
+  //  accountdetails():Observable<Account[]>{
+  //    return this.httpClient.get<Account[]>(this.apiServer+'/UserDashBoard/')
+  // }
+   accountdetailsByUserName(username: any):Observable<Account>{
+    return this.httpClient.get<Account>(this.apiServer+'/UserDashBoard/'+username)
+   }
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

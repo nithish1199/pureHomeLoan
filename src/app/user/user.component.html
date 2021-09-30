@@ -2,15 +2,15 @@
     <div class="content">
 <div [ngClass]="'style'">
     
-    <form [formGroup]="LoginForm" >
+    <form [formGroup]="LoginForm" (ngSubmit)="Login()">
         <div class="container" >
           <h1>Welcome!</h1>
           <p>Please login to know the status of your loan</p>
           <hr>
-
+          <div ><b style="color: crimson;">{{msg}}</b></div>
           <p>
             <label for="uname" ><b>Username</b></label>
-            <input type="text" id="uname" name="uname" formControlName="uname" />
+            <input type="text" id="uname" name="uname" formControlName="Username" />
         </p>
         
         <p>
@@ -19,7 +19,7 @@
         </p>
         
 
-          <a routerLink="/userdash"><button class="registerbtn" type="submit"> Login</button></a>
+          <button class="registerbtn" type="submit"> Login</button>
         </div>
       
         <div class="container signin">

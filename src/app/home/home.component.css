@@ -291,6 +291,11 @@ a.pure-button-primary {
     }
 
 }
+.emi{
+    border: none;
+    opacity: 0px;
+    background-color: white;
+}
 
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --

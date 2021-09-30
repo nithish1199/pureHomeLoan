@@ -1,0 +1,27 @@
+<p>loantracker works!</p>
+<p>userdash works!</p>
+<div class="container">
+    <form [formGroup]="LoanTrackingForm"  novalidate>
+        <div>
+            <label for="applicationid"><b>Application ID</b> </label>
+            <input type="text" id="applicationid" formControlName="ApplicationNumber">
+        </div>
+        <div *ngIf="!applicationnumber?.valid && (applicationnumber?.dirty||applicationnumber?.touched)" class="error">
+            <div *ngIf="applicationnumber?.errors!.required">
+                <b style="color: crimson; font-size: small; ">ApplicationNumber is required</b>
+            </div>
+        </div>
+        <div>
+            <label for="Phonenumber"><b>Phonenumber</b> </label>
+            <input type="number" id="phonenumber" formControlName="Phonenumber">
+         </div>
+        <div *ngIf="!phonenumber?.valid && (phonenumber?.dirty||phonenumber?.touched)" class="error">
+            <div *ngIf="phonenumber?.errors!.required">
+                <b style="color: crimson; font-size: small; ">Phonenumber is required</b>
+            </div>
+        </div>
+        <div class="track">
+            <button class="registerbtn" type="submit" >Track</button>
+        </div>
+    </form>
+</div>
