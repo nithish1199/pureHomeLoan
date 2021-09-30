@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PersonaldetailsService } from '../personaldetails.service';
 
@@ -12,6 +13,7 @@ export class DocumentsComponent implements OnInit {
   selectedFile!: File;
   constructor(private http: HttpClient, private service: PersonaldetailsService, private route: Router) { }
   username: any;
+  application!: FormGroup;
   appid: any
   ngOnInit(): void {
     this.username=sessionStorage.getItem('username')
@@ -35,8 +37,24 @@ export class DocumentsComponent implements OnInit {
     this.service.GetId(this.username).subscribe(data => {
       this.appid = data
       sessionStorage.setItem('appid', this.appid)
+      this.appid=sessionStorage.getItem('appid')
+      this.application = new FormGroup({
+        LoanID: new FormControl(12233),
+        ApplicationID: new FormControl(parseInt(this.appid)),
+        status: new FormControl("Pending"),
+        ApprovalDate: new FormControl()
+      }
+      );
+      console.log(this.application.value)
+      this.service.applicationdetails(this.application.value).subscribe(res => {
+        console.log(res)
+        console.log("Application details saved!")
+      })
+      this.route.navigate(['application'])
     })
-    this.route.navigate(['application'])
+    
+   
+    
   }
 
 }

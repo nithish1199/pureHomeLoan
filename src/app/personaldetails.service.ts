@@ -6,6 +6,7 @@ import{HttpClient,HttpHeaders,HttpErrorResponse} from "@angular/common/http";
 import{catchError} from 'rxjs/operators';
 import { IncomeDetails } from './income-details';
 import { LoanDetails } from './loan-details';
+import { ApplicationDetails } from './application-details';
 @Injectable({
   providedIn: 'root'
 })
@@ -52,8 +53,12 @@ export class PersonaldetailsService {
   GetId(name:string){
     return this.httpClient.get<number>(this.apiServer+'/LoanDetails/'+name);
   }
-
-
+  applicationdetails(application:any):Observable<ApplicationDetails>{
+    return this.httpClient.post<ApplicationDetails>(this.apiServer+'/ApplicationDetails/',JSON.stringify(application),this.httpOptions)
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
 
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
