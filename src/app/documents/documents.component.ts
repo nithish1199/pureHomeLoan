@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PersonaldetailsService } from '../personaldetails.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { PersonaldetailsService } from '../personaldetails.service';
 })
 export class DocumentsComponent implements OnInit {
   selectedFile!: File;
-  constructor(private http: HttpClient, private service: PersonaldetailsService) { }
-  username:string="Nithish";
+  constructor(private http: HttpClient, private service: PersonaldetailsService, private route: Router) { }
+  username: any;
+  appid: any
   ngOnInit(): void {
   }
   onFileSelected(event: any) {
+    this.username = sessionStorage.getItem('username')
     this.selectedFile = <File>event.target.files[0];
     console.log('hi')
     console.log(event)
@@ -21,11 +24,17 @@ export class DocumentsComponent implements OnInit {
   onUpload() {
     const filedata = new FormData();
     filedata.append('image', this.selectedFile, this.selectedFile.name);
-    this.http.post('http://localhost:3751/api/documents/'+this.username, filedata)
+    this.http.post('http://localhost:3751/api/documents/' + this.username, filedata)
       .subscribe(res => {
         console.log(res);
       })
-
+   
+  }
+  submitApp(){
+    this.service.GetId(this.username).subscribe(data => {
+      this.appid = data
+      sessionStorage.setItem('appid', this.appid)
+    })
   }
 
 }

@@ -49,6 +49,9 @@ export class PersonaldetailsService {
     return this.httpClient.post(this.apiServer + '/PersonalDetails/login/', JSON.stringify(register), this.httpOptions)
     
   } 
+  GetId(name:string){
+    return this.httpClient.get<number>(this.apiServer+'/LoanDetails/'+name);
+  }
 
 
 
