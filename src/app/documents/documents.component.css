@@ -24,7 +24,7 @@
     margin: 2px 0px;
     border: none;
     cursor: pointer;
-    width: 15%;
+    width: 20%;
     opacity: 0.9;
   }
 
@@ -34,7 +34,7 @@
 
 .newbtn{
   margin-top: 10px; 
-  width: 30%; 
+  width: 45%; 
   background-color: lightsteelblue;
 }
 

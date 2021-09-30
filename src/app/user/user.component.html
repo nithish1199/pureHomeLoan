@@ -2,7 +2,11 @@
     <div class="content">
 <div [ngClass]="'style'">
     
+<<<<<<< HEAD
     <form [formGroup]="LoginForm" (ngSubmit)="Login()">
+=======
+    <form [formGroup]="LoginForm" (ngSubmit)="submit()">
+>>>>>>> b7f1a09d1d16374ba14fd7cff77246dffe0f8183
         <div class="container" >
           <h1>Welcome!</h1>
           <p>Please login to know the status of your loan</p>
@@ -21,7 +25,7 @@
 
           <button class="registerbtn" type="submit"> Login</button>
         </div>
-      
+      {{message}}
         <div class="container signin">
           <p>Forgot Password? <a href="clickhere">Click here</a>.</p>
         </div>

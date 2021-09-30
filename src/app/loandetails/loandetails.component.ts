@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router,ActivatedRoute} from '@angular/router';
 import { PersonaldetailsService } from '../personaldetails.service';
-
 @Component({
   selector: 'app-loandetails',
   templateUrl: './loandetails.component.html',
   styleUrls: ['./loandetails.component.css']
 })
 export class LoandetailsComponent implements OnInit {
+  
   LoanDetails!:FormGroup;
   username:any;
   estamt:any;
@@ -24,22 +24,26 @@ export class LoandetailsComponent implements OnInit {
     this.maxamt=Number(this.estamt)*0.85
     this.loanamt=60*0.6*Number(this.salary);
     this.LoanDetails=new FormGroup({
-      ApplicationID:new FormControl(),
+      ApplicationID:new FormControl(2233),
       Username:new FormControl(this.username),
       MaxLoanAmountGrantable:new FormControl(Number(this.maxamt)),
       InterestRate:new FormControl(6.7),
       Tenure:new FormControl(),
       LoanAmount:new FormControl(Number(this.loanamt)),
-      LoanStartDate:new FormControl('')
+      LoanStartDate:new FormControl()
     }
     );
   }
+  
   SubmitLoan(){
     console.log("hi");
     console.log(this.LoanDetails.value)
     this.service.loandetails(this.LoanDetails.value).subscribe(res=>{
       console.log(res)
       console.log("Loan details saved!")
+      this.route.navigate(['documents'])
     })
+
+   
   }
 }
