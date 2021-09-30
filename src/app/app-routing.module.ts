@@ -32,7 +32,7 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path:'login',component:LoginComponent},
   {path:'user',component:UserComponent},
-  {path:'userdash/username',component:UserdashComponent},
+  {path:'userdash',component:UserdashComponent},
   {path:'adminlogin',component:AdminloginComponent},
   {path:'pending',component:PendingComponent},
   {path:'reject',component:RejectComponent},

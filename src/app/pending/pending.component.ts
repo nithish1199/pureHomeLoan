@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplicationDetails } from '../application-details';
+import { Personaldetails } from '../personaldetails';
+import { PersonaldetailsService } from '../personaldetails.service';
 
 @Component({
   selector: 'app-pending',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PendingComponent implements OnInit {
 
-  constructor() { }
+ 
+
+  constructor(public service:PersonaldetailsService) { }
 
   ngOnInit(): void {
+    
+}
   }
 
-}

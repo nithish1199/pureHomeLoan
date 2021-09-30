@@ -1,6 +1,6 @@
 export class ApplicationDetails {
-    LoanID!:number;
-    ApplicationID!:number;
+    loanID!:number;
+    applicationID!:number;
     status!:string;
-    ApprovalDate!:Date;
+    approvalDate!:Date;
 }

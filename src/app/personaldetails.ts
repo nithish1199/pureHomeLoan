@@ -1,15 +1,15 @@
 export class Personaldetails {
     username!:string;
-    FirstName!:string;
-    MiddleName!:string;
-    LastName!:string;
-    EmailId!:string;
+    firstName!:string;
+    middleName!:string;
+    lastName!:string;
+    emailId!:string;
     password!:string;
-    PhoneNumber!:number;
-    DateOfBirth!:Date;
-    Gender!:string;
-    Nationality!:string;
-    AadharNumber!:number;
-    PanNumber!:string;
+    phoneNumber!:number;
+    dateOfBirth!:Date;
+    gender!:string;
+    nationality!:string;
+    aadharNumber!:number;
+    panNumber!:string;
 }
 
