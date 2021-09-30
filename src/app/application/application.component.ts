@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaldetailsService } from '../personaldetails.service';
+import { Personaldetails } from '../personaldetails';
+
 
 @Component({
   selector: 'app-application',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent implements OnInit {
-
+ApplicationID:any
+  
   constructor() { }
 
   ngOnInit(): void {
+    
+
   }
 
 }

@@ -2,7 +2,7 @@
     <div class="content">
 <div [ngClass]="'style'">
     
-    <form [formGroup]="LoginForm" (click)="submit()">
+    <form [formGroup]="LoginForm" (ngSubmit)="submit()">
         <div class="container" >
           <h1>Welcome!</h1>
           <p>Please login to know the status of your loan</p>

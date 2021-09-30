@@ -29,10 +29,9 @@ export class UserComponent implements OnInit {
     // this.register=this.LoginForm.value
     // console.log(this.register)
     console.log(this.LoginForm)
-    this.service.login(this.LoginForm.value).subscribe(res => {console.log(res)},error=>this.message="Incorrect details");
-    this.router.navigate(['userdash']);
-
-    
+    this.service.login(this.LoginForm.value).subscribe(res => {console.log(res)
+      this.router.navigate(['userdash'])},
+    error=>this.message="Incorrect details");  
   }
 
 }

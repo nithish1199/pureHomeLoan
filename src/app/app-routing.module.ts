@@ -40,7 +40,8 @@ const routes: Routes = [
   {path:'clickhere',component:ClickhereComponent},
   {path:'recoverpassword',component:RecoverpasswordComponent},
   {path:'passwordsuccessful',component:PasswordsuccessfulComponent},
-  {path:'eligibiltycalculator',component:EligibiltycalculatorComponent}
+  {path:'eligibiltycalculator',component:EligibiltycalculatorComponent},
+  
 ];
 
 @NgModule({
