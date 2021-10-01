@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoanDetails } from '../loan-details';
 import { PersonaldetailsService } from '../personaldetails.service';
 
@@ -19,7 +19,7 @@ export class ApprovalComponent implements OnInit {
     tenure: new FormControl(''),
     loanAmount: new FormControl(''),
   })
-  constructor(private service: PersonaldetailsService, private router: ActivatedRoute) { }
+  constructor(private service: PersonaldetailsService, private router: ActivatedRoute,private route:Router) { }
 
   ngOnInit(): void {
     this.GetLoanData()
@@ -39,5 +39,10 @@ export class ApprovalComponent implements OnInit {
   }
   onApprove(){
     this.service.approveData(this.router.snapshot.params['appid'],this.loanData.value).subscribe()
+    this.route.navigate(['pending'])
+  }
+  onReject(){
+    this.service.rejectData(this.router.snapshot.params['appid'],this.loanData.value).subscribe()
+    this.route.navigate(['pending'])
   }
 }

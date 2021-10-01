@@ -54,7 +54,7 @@ export class PersonaldetailsService {
   //    return this.httpClient.get<Account[]>(this.apiServer+'/UserDashBoard/')
   // }
    accountdetailsByUserName(username: any):Observable<Account>{
-    return this.httpClient.get<Account>(this.apiServer+'/UserDashBoard/'+username)
+    return this.httpClient.get<Account>(this.apiServer+'/AccountDetails/'+username)
    }
 
   login(register:Personaldetails){
@@ -75,6 +75,9 @@ export class PersonaldetailsService {
   }
   approveData(id:number,loandetails:LoanDetails){
     return this.httpClient.put(this.apiServer+'/LoanDetails/put/'+id,JSON.stringify(loandetails),this.httpOptions);
+   }
+   rejectData(id:number,loandetails:LoanDetails){
+    return this.httpClient.put(this.apiServer+'/LoanDetails/putreject/'+id,JSON.stringify(loandetails),this.httpOptions);
    }
 
   

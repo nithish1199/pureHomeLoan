@@ -18,7 +18,4 @@ details:LoanDetails[]=[]
     this.service.GetLoanDetails().subscribe((data:LoanDetails[])=>this.details=data)
     console.log(this.details);
   }
-  onApprove(){
-    
-  }
 }

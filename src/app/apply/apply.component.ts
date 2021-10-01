@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { PersonaldetailsService } from '../personaldetails.service';
 import { Personaldetails } from '../personaldetails';
 import { Router,ActivatedRoute } from '@angular/router';
+import { MatchPasswordService } from '../match-password.service';
 @Component({
   selector: 'app-apply',
   templateUrl: './apply.component.html',
@@ -20,15 +21,16 @@ export class ApplyComponent implements OnInit {
     password:new FormControl("", [Validators.required, Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]),
     ConfirmPassword:new FormControl("", [Validators.required]),
     PhoneNumber:new FormControl("", [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-    DateOfBirth:new FormControl(),
-    Gender:new FormControl(),
+    DateOfBirth:new FormControl("",[Validators.required]),
+    Gender:new FormControl("",[Validators.required]),
     Nationality:new FormControl(null,[Validators.required]),
     AadharNumber:new FormControl(null,[Validators.required]),
     PanNumber:new FormControl(null,[Validators.required]),
   }
+    //{validator:this.customValidator.passwordMatchValidator("password","ConfirmPassword")}
     //{validators:this.passwordMatchValidator}
   );
-  constructor(private service:PersonaldetailsService,private route:Router) { }
+  constructor(private service:PersonaldetailsService,private route:Router,public customValidator:MatchPasswordService) { }
 
   ngOnInit(): void { }
   get username()
@@ -77,10 +79,19 @@ export class ApplyComponent implements OnInit {
   {
     return this.PersonalDetails.get('PanNumber');
   }
-
-  passwordMatchValidator(PersonalDetails:FormGroup){
-    return PersonalDetails.controls['password'].value===PersonalDetails.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
+  get DateOfBirth()
+  {
+    return this.PersonalDetails.get('DateOfBirth');
   }
+  get Gender()
+  {
+    return this.PersonalDetails.get('Gender');
+  }
+
+
+  // passwordMatchValidator(PersonalDetails:FormGroup){
+  //    return PersonalDetails.controls['password'].value===PersonalDetails.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
+  // }
   submitperdetails()
   {
     // this.PersonalDetails=this.InsertForm.value
