@@ -38,7 +38,7 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
-
+  GetLoanDetails():Observable<LoanDetails[]>{return this.httpClient.get<LoanDetails[]>(this.apiServer+'/LoanDetails/display')}
 
   loandetails(loandetails:any):Observable<LoanDetails>{
     return this.httpClient.post<LoanDetails>(this.apiServer+'/LoanDetails/',JSON.stringify(loandetails),this.httpOptions)
@@ -58,7 +58,7 @@ export class PersonaldetailsService {
     
   } 
   GetId(name:string){
-    return this.httpClient.get<number>(this.apiServer+'/LoanDetails/'+name);
+    return this.httpClient.get<number>(this.apiServer+'/LoanDetails/display'+name);
   }
   applicationdetails(application:any):Observable<ApplicationDetails>{
     return this.httpClient.post<ApplicationDetails>(this.apiServer+'/ApplicationDetails/',JSON.stringify(application),this.httpOptions)

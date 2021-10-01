@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationDetails } from '../application-details';
-import { Personaldetails } from '../personaldetails';
+import { LoanDetails } from '../loan-details';
 import { PersonaldetailsService } from '../personaldetails.service';
 
 @Component({
@@ -9,13 +8,14 @@ import { PersonaldetailsService } from '../personaldetails.service';
   styleUrls: ['./pending.component.css']
 })
 export class PendingComponent implements OnInit {
-
- 
-
-  constructor(public service:PersonaldetailsService) { }
+details:LoanDetails[]=[]
+  constructor(private service:PersonaldetailsService) { }
 
   ngOnInit(): void {
-    
-}
+    this.AdminDashBoard()
   }
-
+  AdminDashBoard(){
+    this.service.GetLoanDetails().subscribe((data:LoanDetails[])=>this.details=data)
+    console.log(this.details);
+  }
+}

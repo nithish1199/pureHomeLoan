@@ -32,7 +32,7 @@ export class UserComponent implements OnInit {
     this.service.login(this.LoginForm.value).subscribe(res => {
       console.log(res)
       console.log('Login successful')
-      this.router.navigate(['userdash'])
+      this.router.navigate(['userdash/username',{username:this.LoginForm.value.Username}])
     },
     error=>this.message="Incorrect details"
     

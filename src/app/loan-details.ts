@@ -1,9 +1,9 @@
 export class LoanDetails {
-    applicationID!:number
+    applicationId!:number
     username!:string
     maxLoanAmountGrantable!:number
     interestRate!:number
     tenure!:number
-    loanAmount!:number
+    loantAmount!:number
     loanStartDate!:Date
 }
