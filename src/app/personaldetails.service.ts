@@ -70,6 +70,12 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
+  GetDetailsByApplicationID(id:number){
+    return this.httpClient.get<LoanDetails>(this.apiServer+'/LoanDetails/get/'+id);
+  }
+  approveData(id:number,loandetails:LoanDetails){
+    return this.httpClient.put(this.apiServer+'/LoanDetails/put/'+id,JSON.stringify(loandetails),this.httpOptions);
+   }
 
   
 

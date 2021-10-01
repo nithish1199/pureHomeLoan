@@ -20,6 +20,7 @@ import { RejectComponent } from './reject/reject.component';
 import { UserComponent } from './user/user.component';
 import { UserdashComponent } from './userdash/userdash.component';
 import { LoantrackerComponent } from './loantracker/loantracker.component';
+import { ApprovalComponent } from './approval/approval.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'Home',component:HomeComponent},
@@ -41,7 +42,8 @@ const routes: Routes = [
   {path:'recoverpassword',component:RecoverpasswordComponent},
   {path:'passwordsuccessful',component:PasswordsuccessfulComponent},
   {path:'eligibiltycalculator',component:EligibiltycalculatorComponent},
-  {path: 'loantracker',component:LoantrackerComponent}
+  {path: 'loantracker',component:LoantrackerComponent},
+  {path:'approval/:appid',component:ApprovalComponent}
 ];
 
 @NgModule({

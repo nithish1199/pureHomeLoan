@@ -1,0 +1,33 @@
+<p style="margin-top: 100px;">approval works!</p>
+
+<p>Approve User</p>
+<form [formGroup]="loanData">
+    <p>
+        <label for="applicationId">Application ID</label>
+        <input type="number" name="applicationId" id="applicationId" formControlName="applicationId" readonly>
+    </p>
+    <p>
+        <label for="username">username</label>
+        <input type="text" name="username" id="username" formControlName="username" readonly>
+    </p>
+    <p>
+        <label for="maxLoanAmountGrantable">maxLoanAmountGrantable</label>
+        <input type="number" step="any" name="maxLoanAmountGrantable" id="maxLoanAmountGrantable" formControlName="maxLoanAmountGrantable" readonly>
+    </p>
+    <p>
+        <label for="interestRate">interestRate</label>
+        <input type="number" step="any" name="interestRate" id="interestRate" formControlName="interestRate" readonly>
+    </p>
+    <p>
+        <label for="tenure">tenure</label>
+        <input type="number" name="tenure" id="tenure" formControlName="tenure" readonly>
+    </p>
+    <p>
+        <label for="loanAmount">Loan Amount</label>
+        <input type="number" step="any" name="loanAmount" id="loanAmount" formControlName="loanAmount" readonly>
+    </p>
+    <button (click)="onApprove()">Approve</button>
+     <button> Reject</button>
+</form>
+
+

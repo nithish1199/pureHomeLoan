@@ -5,7 +5,7 @@
             <tr>
                 <th>Application ID</th>
                 <th>Interest Rate</th>
-                <th>Loan Ammount</th>
+                <th>Loan Amount</th>
                 <th>Maximum Ammount Grantable</th>
                 <th>Tenure</th>                            
                <th>Username</th>
@@ -15,15 +15,14 @@
             <tr *ngFor="let loan of details">
                 <td>{{loan.applicationId}}</td>
                 <td>{{loan.interestRate}}</td>
-                <td>{{loan.loantAmount}}</td>
+                <td>{{loan.loanAmount}}</td>
                 <td>{{loan.maxLoanAmountGrantable}}</td>
                 <td>{{loan.tenure}}</td>
                 <td>{{loan.username}}</td>
                     <!--<button [routerLink]="['/update/', product.id]">Update</button>
                     <button type="button" (click)="delete(product.id)">Remove</button>
                 </td>-->
-                <td><button>Approve</button></td>
-                <td><button>Reject</button></td>
+                <td><button [routerLink]="['/approval/',loan.applicationId]">Approve/Reject</button></td>
             </tr>
         </tbody>
     </table>
