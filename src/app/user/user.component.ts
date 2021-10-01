@@ -34,7 +34,7 @@ export class UserComponent implements OnInit {
       console.log('Login successful')
       sessionStorage.setItem('USERNAME',this.LoginForm.controls.Username.value);
       this.service.subject.next(true);
-      this.router.navigate(['userdash'])
+      this.router.navigate(['userdash/username',{username:this.LoginForm.value.Username}])
     },
     error=>this.message="Incorrect details"
     
