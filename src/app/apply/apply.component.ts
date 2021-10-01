@@ -79,7 +79,7 @@ export class ApplyComponent implements OnInit {
   }
 
   passwordMatchValidator(PersonalDetails:FormGroup){
-    return PersonalDetails.controls['password'].value===PersonalDetails!.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
+    return PersonalDetails.controls['password'].value===PersonalDetails.controls['ConfirmPassword'].value?{'mismatch':false}:{'mismatch':true};
   }
   submitperdetails()
   {

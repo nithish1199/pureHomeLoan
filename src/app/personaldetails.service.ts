@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable,throwError } from 'rxjs';
+import { Observable,Subject,throwError } from 'rxjs';
 import { Personaldetails } from './personaldetails';
 import { ErrorHandler } from '@angular/core';
 import{HttpClient,HttpHeaders,HttpErrorResponse} from "@angular/common/http";
@@ -11,10 +11,11 @@ import { ApplicationDetails } from './application-details';
   providedIn: 'root'
 })
 export class PersonaldetailsService {
+  public subject=new Subject<boolean>();
   userlogin(value: any) {
     throw new Error('Method not implemented.');
   }
-  private apiServer="http://localhost:27614/api";
+  private apiServer="http://localhost:3751/api";
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
@@ -22,7 +23,10 @@ export class PersonaldetailsService {
   }
 
   constructor(private httpClient: HttpClient) { }
-
+  recievedStatus():Observable<boolean>
+  {
+    return this.subject.asObservable();
+  }
   personaldetails(priregister:any):Observable<Personaldetails>{
     return this.httpClient.post<Personaldetails>(this.apiServer+'/PersonalDetails/',JSON.stringify(priregister),this.httpOptions)
     .pipe(
