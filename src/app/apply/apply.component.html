@@ -120,6 +120,11 @@
           Male<input type="radio" value="male" formControlName="Gender" id="gen" name="Gender" />
           Female<input type="radio" value="female" formControlName="Gender" id="gen" name="Gender" />
         </p>
+        <div *ngIf="!Gender?.valid && (Gender?.dirty || Gender?.touched)" class="error">
+          <div *ngIf="Gender!.errors!.required">
+            <b style="color: crimson; font-size: small;">Gender is required</b>
+          </div>
+        </div>
 
         <p>
           <label for="nat"><b>Nationality</b></label>
@@ -139,6 +144,9 @@
           <div *ngIf="AadharNumber!.errors!.required">
             <b style="color: crimson; font-size: small;">Aadharnumber is required</b>
           </div>
+          <div *ngIf="AadharNumber!.errors!.pattern">
+            <b style="color: crimson; font-size: small;">Aadharnumber should contain 12 digits</b>
+          </div>
         </div>
 
         <p>
@@ -151,7 +159,7 @@
             <b style="color: crimson; font-size: small;">Pannumber is required </b>
           </div>
         </div>
-        <input class="registerbtn" value="Save and Next" type="submit">
+        <input class="registerbtn" value="Save and Next" type="submit" [disabled]="!PersonalDetails.valid">
       </div>
 
       <div class="container signin">

@@ -24,7 +24,7 @@ export class ApplyComponent implements OnInit {
     DateOfBirth:new FormControl("",[Validators.required]),
     Gender:new FormControl("",[Validators.required]),
     Nationality:new FormControl(null,[Validators.required]),
-    AadharNumber:new FormControl(null,[Validators.required]),
+    AadharNumber:new FormControl(null,[Validators.required,Validators.pattern("^[0-9]{12}$")]),
     PanNumber:new FormControl(null,[Validators.required]),
   }
     //{validator:this.customValidator.passwordMatchValidator("password","ConfirmPassword")}
