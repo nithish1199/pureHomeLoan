@@ -31,13 +31,7 @@ import { LoantrackerComponent } from './loantracker/loantracker.component';
 import { ApprovalComponent } from './approval/approval.component';
 import { DetailsComponent } from './details/details.component';
 import { PendingtableComponent } from './pendingtable/pendingtable.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';  
-import { MatDialogModule} from '@angular/material/dialog'  
-import { MatCheckboxModule } from '@angular/material/checkbox';  
-import { MatSelectModule } from '@angular/material/select';  
-import { MatTableModule } from '@angular/material/table';  
-import { MatToolbarModule} from '@angular/material/toolbar';
+
 
 
 @NgModule({
@@ -77,13 +71,6 @@ import { MatToolbarModule} from '@angular/material/toolbar';
     Ng5SliderModule,
     NgxSliderModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatSelectModule,
-    MatTableModule,
-    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
