@@ -20,11 +20,7 @@ import { RejectComponent } from './reject/reject.component';
 import { UserComponent } from './user/user.component';
 import { UserdashComponent } from './userdash/userdash.component';
 import { LoantrackerComponent } from './loantracker/loantracker.component';
-<<<<<<< HEAD
-import { DetailsComponent } from './details/details.component';
-=======
 import { ApprovalComponent } from './approval/approval.component';
->>>>>>> ac3bc17f21ded354a14aa26934216dd4173948ab
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'Home',component:HomeComponent},
@@ -47,12 +43,7 @@ const routes: Routes = [
   {path:'passwordsuccessful',component:PasswordsuccessfulComponent},
   {path:'eligibiltycalculator',component:EligibiltycalculatorComponent},
   {path: 'loantracker',component:LoantrackerComponent},
-<<<<<<< HEAD
-  {path:'details',component:DetailsComponent},
- 
-=======
   {path:'approval/:appid',component:ApprovalComponent}
->>>>>>> ac3bc17f21ded354a14aa26934216dd4173948ab
 ];
 
 @NgModule({
