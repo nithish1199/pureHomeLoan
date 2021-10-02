@@ -10,15 +10,14 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class UserdashComponent implements OnInit {
   accounts!: Account ;
 
- 
-  constructor(private service:PersonaldetailsService,private route:Router, private router:ActivatedRoute) {}
+  constructor(private route:Router,private service:PersonaldetailsService,private router:ActivatedRoute) { }
+
   ngOnInit(): void {
-     this.accountDetails() 
-  
-      
-      //  this.service.accountdetails().subscribe((data: Account[])=>{
-      //    this.accounts = data;
-      // })  
+    if(sessionStorage.getItem('USERNAME')===null){
+      this.route.navigate(['user'])
+    }
+    this.accountDetails() 
+ 
   }
     accountDetails(){
     console.log("hi");
@@ -33,8 +32,8 @@ export class UserdashComponent implements OnInit {
       this.route.navigate(['Home'])
     }
         
+
+  
+  
+
 }
-  
-  
-
-

@@ -20,6 +20,7 @@ import { RejectComponent } from './reject/reject.component';
 import { UserComponent } from './user/user.component';
 import { UserdashComponent } from './userdash/userdash.component';
 import { LoantrackerComponent } from './loantracker/loantracker.component';
+import { ApprovalComponent } from './approval/approval.component';
 import { DetailsComponent } from './details/details.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -33,7 +34,7 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path:'login',component:LoginComponent},
   {path:'user',component:UserComponent},
-  {path:'userdash',component:UserdashComponent},
+  {path:'userdash/username',component:UserdashComponent},
   {path:'adminlogin',component:AdminloginComponent},
   {path:'pending',component:PendingComponent},
   {path:'reject',component:RejectComponent},
@@ -43,6 +44,7 @@ const routes: Routes = [
   {path:'passwordsuccessful',component:PasswordsuccessfulComponent},
   {path:'eligibiltycalculator',component:EligibiltycalculatorComponent},
   {path: 'loantracker',component:LoantrackerComponent},
+  {path:'approval/:appid',component:ApprovalComponent},
   {path:'details',component:DetailsComponent},
  
 ];

@@ -1,31 +1,40 @@
 <div class="content-wrapper">
-    <div class="content">
-<div [ngClass]="'style'">
-    
-    <form [formGroup]="LoginForm" (ngSubmit)="submit()">
-        <div class="container" >
-          <h1>Welcome!</h1>
-          <p>Please login to know the status of your loan</p>
-          <hr>
-          <div ><b style="color: crimson;">{{message}}</b></div>
-          <p>
-            <label for="uname" ><b>Username</b></label>
-            <input type="text" id="uname" name="uname" formControlName="Username" />
-        </p>
-        
-        <p>
-            <label for="pass" ><b>Password</b></label>
-            <input type="text" id="pass" name="pass" formControlName="Password" />
-        </p>
-        
+  <!-- <div class="content"> -->
+  <div [ngClass]="'style'">
 
-          <button class="registerbtn" type="submit"> Login</button>
+    <form [formGroup]="LoginForm" (ngSubmit)="submit()">
+      <div class="container">
+        <h1>Welcome!</h1>
+        <p>Please login to know the status of your loan</p>
+        <hr>
+        <div><b style="color: crimson;">{{message}}</b></div>
+        <p>
+          <label for="uname"><b>Username</b></label>
+          <input type="text" id="uname" name="uname" formControlName="Username" />
+        </p>
+        <div *ngIf="!Username?.valid && (Username?.dirty || Username?.touched)" class="error">
+          <div *ngIf="Username!.errors!.required">
+            <b style="color: crimson; font-size: small;">Username is required </b>
+          </div>
         </div>
+
+        <p>
+          <label for="pass"><b>Password</b></label>
+          <input type="text" id="pass" name="pass" formControlName="Password" />
+        </p>
+        <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
+          <div *ngIf="Password!.errors!.required">
+            <b style="color: crimson; font-size: small;">Password is required </b>
+          </div>
+        </div>
+
+        <button class="registerbtn" type="submit" [disabled]="!LoginForm.valid"> Login</button>
+      </div>
       {{message}}
-        <div class="container signin">
-          <p>Forgot Password? <a href="clickhere">Click here</a>.</p>
-        </div>
-        
-      </form>
-</div>
+      <div class="container signin">
+        <p>Forgot Password? <a href="clickhere">Click here</a>.</p>
+      </div>
+
+    </form>
+  </div>
 </div>
