@@ -16,8 +16,8 @@ export class UserComponent implements OnInit {
   message!:string;
   register!:Personaldetails;
   LoginForm=new FormGroup({
-    Username:new FormControl(),
-    Password:new FormControl()
+    Username:new FormControl("",[Validators.required]),
+    Password:new FormControl("",[Validators.required])
   });
   constructor(private service:PersonaldetailsService,private router:Router) { }
 
@@ -32,6 +32,8 @@ export class UserComponent implements OnInit {
     this.service.login(this.LoginForm.value).subscribe(res => {
       console.log(res)
       console.log('Login successful')
+      sessionStorage.setItem('USERNAME',this.LoginForm.controls.Username.value);
+      this.service.subject.next(true);
       this.router.navigate(['userdash/username',{username:this.LoginForm.value.Username}])
     },
     error=>this.message="Incorrect details"
@@ -39,6 +41,12 @@ export class UserComponent implements OnInit {
     );
 
     
+  }
+  get Username(){
+    return this.LoginForm.get('Username');
+  }
+  get Password(){
+    return this.LoginForm.get('Password');
   }
 
 }

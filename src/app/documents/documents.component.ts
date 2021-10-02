@@ -27,7 +27,7 @@ export class DocumentsComponent implements OnInit {
   onUpload() {
     const filedata = new FormData();
     filedata.append('image', this.selectedFile, this.selectedFile.name);
-    this.http.post('http://localhost:27614/api/documents/' + this.username, filedata)
+    this.http.post('http://localhost:3751/api/documents/' + this.username, filedata)
       .subscribe(res => {
         console.log(res);
       })

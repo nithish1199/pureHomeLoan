@@ -28,7 +28,7 @@ export class LoandetailsComponent implements OnInit {
       Username:new FormControl(this.username),
       MaxLoanAmountGrantable:new FormControl(Number(this.maxamt)),
       InterestRate:new FormControl(6.7),
-      Tenure:new FormControl(),
+      Tenure:new FormControl("",[Validators.required]),
       LoanAmount:new FormControl(Number(this.loanamt)),
       LoanStartDate:new FormControl()
     }
@@ -45,5 +45,8 @@ export class LoandetailsComponent implements OnInit {
     })
 
    
+  }
+  get Tenure(){
+    return this.LoanDetails.get('Tenure')
   }
 }

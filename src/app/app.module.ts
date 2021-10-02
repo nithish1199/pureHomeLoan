@@ -28,6 +28,7 @@ import { EligibiltycalculatorComponent } from './eligibiltycalculator/eligibilty
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
 import { LoantrackerComponent } from './loantracker/loantracker.component';
+<<<<<<< HEAD
 import { DetailsComponent } from './details/details.component';
 import { PendingtableComponent } from './pendingtable/pendingtable.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +38,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';  
 import { MatTableModule } from '@angular/material/table';  
 import { MatToolbarModule} from '@angular/material/toolbar';
+=======
+import { ApprovalComponent } from './approval/approval.component';
+>>>>>>> ac3bc17f21ded354a14aa26934216dd4173948ab
 
 
 @NgModule({
@@ -62,8 +66,12 @@ import { MatToolbarModule} from '@angular/material/toolbar';
     PasswordsuccessfulComponent,
     EligibiltycalculatorComponent,
     LoantrackerComponent,
+<<<<<<< HEAD
     DetailsComponent,
     PendingtableComponent
+=======
+    ApprovalComponent
+>>>>>>> ac3bc17f21ded354a14aa26934216dd4173948ab
  
   ],
   imports: [

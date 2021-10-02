@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable,throwError } from 'rxjs';
+import { Observable,Subject,throwError } from 'rxjs';
 import { Personaldetails } from './personaldetails';
 import { ErrorHandler } from '@angular/core';
 import{HttpClient,HttpHeaders,HttpErrorResponse} from "@angular/common/http";
@@ -12,10 +12,11 @@ import { Account } from './account';
   providedIn: 'root'
 })
 export class PersonaldetailsService {
+  public subject=new Subject<boolean>();
   userlogin(value: any) {
     throw new Error('Method not implemented.');
   }
-  private apiServer="http://localhost:27614/api";
+  private apiServer="http://localhost:3751/api";
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
@@ -23,7 +24,10 @@ export class PersonaldetailsService {
   }
 
   constructor(private httpClient: HttpClient) { }
-
+  recievedStatus():Observable<boolean>
+  {
+    return this.subject.asObservable();
+  }
   personaldetails(priregister:any):Observable<Personaldetails>{
     return this.httpClient.post<Personaldetails>(this.apiServer+'/PersonalDetails/',JSON.stringify(priregister),this.httpOptions)
     .pipe(
@@ -50,7 +54,7 @@ export class PersonaldetailsService {
   //    return this.httpClient.get<Account[]>(this.apiServer+'/UserDashBoard/')
   // }
    accountdetailsByUserName(username: any):Observable<Account>{
-    return this.httpClient.get<Account>(this.apiServer+'/UserDashBoard/'+username)
+    return this.httpClient.get<Account>(this.apiServer+'/AccountDetails/'+username)
    }
 
   login(register:Personaldetails){
@@ -66,6 +70,15 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
+  GetDetailsByApplicationID(id:number){
+    return this.httpClient.get<LoanDetails>(this.apiServer+'/LoanDetails/get/'+id);
+  }
+  approveData(id:number,loandetails:LoanDetails){
+    return this.httpClient.put(this.apiServer+'/LoanDetails/put/'+id,JSON.stringify(loandetails),this.httpOptions);
+   }
+   rejectData(id:number,loandetails:LoanDetails){
+    return this.httpClient.put(this.apiServer+'/LoanDetails/putreject/'+id,JSON.stringify(loandetails),this.httpOptions);
+   }
 
   
   
