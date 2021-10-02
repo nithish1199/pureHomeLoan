@@ -4,6 +4,6 @@ export class LoanDetails {
     maxLoanAmountGrantable!:number
     interestRate!:number
     tenure!:number
-    loantAmount!:number
+    loanAmount!:number
     loanStartDate!:Date
 }

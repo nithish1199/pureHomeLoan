@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { LoanDetails } from '../loan-details';
 import { PersonaldetailsService } from '../personaldetails.service';
+import {  MatTableDataSource  } from '@angular/material/table';  
+import {  SelectionModel } from '@angular/cdk/collections';  
+import {  MatDialog,  MatDialogConfig  } from "@angular/material/dialog"; 
+import { Personaldetails } from '../personaldetails';
+import { DetailsComponent } from '../details/details.component';
+import { DataSource } from '@angular/cdk/table';
+
 
 @Component({
   selector: 'app-pending',
@@ -8,14 +15,17 @@ import { PersonaldetailsService } from '../personaldetails.service';
   styleUrls: ['./pending.component.css']
 })
 export class PendingComponent implements OnInit {
-details:LoanDetails[]=[]
+  
+ 
   constructor(private service:PersonaldetailsService) { }
 
   ngOnInit(): void {
-    this.AdminDashBoard()
+    
   }
-  AdminDashBoard(){
-    this.service.GetLoanDetails().subscribe((data:LoanDetails[])=>this.details=data)
-    console.log(this.details);
-  }
+
+ 
 }
+
+
+
+
