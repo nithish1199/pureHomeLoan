@@ -29,6 +29,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
 import { LoantrackerComponent } from './loantracker/loantracker.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { DetailsComponent } from './details/details.component';
 import { PendingtableComponent } from './pendingtable/pendingtable.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +42,12 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 =======
 import { ApprovalComponent } from './approval/approval.component';
 >>>>>>> ac3bc17f21ded354a14aa26934216dd4173948ab
+=======
+import { ApprovalComponent } from './approval/approval.component';
+import { DetailsComponent } from './details/details.component';
+import { PendingtableComponent } from './pendingtable/pendingtable.component';
+
+>>>>>>> 44104fa633de783c43d6da553f5940b05eda23a0
 
 
 @NgModule({
@@ -67,11 +74,17 @@ import { ApprovalComponent } from './approval/approval.component';
     EligibiltycalculatorComponent,
     LoantrackerComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     DetailsComponent,
     PendingtableComponent
 =======
     ApprovalComponent
 >>>>>>> ac3bc17f21ded354a14aa26934216dd4173948ab
+=======
+    ApprovalComponent,
+    DetailsComponent,
+    PendingtableComponent
+>>>>>>> 44104fa633de783c43d6da553f5940b05eda23a0
  
   ],
   imports: [
@@ -83,13 +96,6 @@ import { ApprovalComponent } from './approval/approval.component';
     Ng5SliderModule,
     NgxSliderModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatSelectModule,
-    MatTableModule,
-    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
