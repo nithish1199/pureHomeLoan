@@ -26,6 +26,14 @@
         <label for="loanAmount">Loan Amount</label>
         <input type="number" step="any" name="loanAmount" id="loanAmount" formControlName="loanAmount" readonly>
     </p>
+    <p>
+        <label for="aadharNumber">Aadhar Number</label>
+        <input type="number"  name="aadharNumber" id="aadharNumber" formControlName="aadharNumber" readonly>
+    </p>
+    <p>
+        <label for="panNumber">Pan Number</label>
+        <input type="text"  name="panNumber" id="panNumber" formControlName="panNumber" readonly>
+    </p>
     <button (click)="onApprove()">Approve</button>
      <button (click)="onReject()"> Reject</button>
 </form>

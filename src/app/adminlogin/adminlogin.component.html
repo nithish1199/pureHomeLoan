@@ -1,31 +1,39 @@
 <div class="content-wrapper">
-    <div class="content">
-<div [ngClass]="'style'">
-    
-    <form [formGroup]="AdminLogin" >
-        <div class="container" >
+  <div class="content">
+    <div [ngClass]="'style'">
+
+      <form [formGroup]="AdminLogin" (ngSubmit)="submit()">
+        <div class="container">
           <h1>Welcome Admin!</h1>
           <!-- <p>Please login to know the status of your loan</p> -->
           <hr>
 
           <p>
-            <label for="uname" ><b>Username</b></label>
+            <label for="uname"><b>Username</b></label>
             <input type="text" id="uname" name="uname" formControlName="Username" />
-        </p>
-        
-        <p>
-            <label for="pass" ><b>Password</b></label>
+          </p>
+          <div *ngIf="!Username?.valid && (Username?.dirty || Username?.touched)" class="error">
+            <div *ngIf="Username!.errors!.required">
+              <b style="color: crimson; font-size: small;">Username is required </b>
+            </div>
+          </div>
+          <p>
+            <label for="pass"><b>Password</b></label>
             <input type="text" id="pass" name="pass" formControlName="Password" />
-        </p>
-        
+          </p>
+          <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
+            <div *ngIf="Password!.errors!.required">
+              <b style="color: crimson; font-size: small;">Password is required </b>
+            </div>
+          </div>
 
-          <a routerLink="/admin"><button class="registerbtn" type="submit"> Login</button></a>
+          <button class="registerbtn" type="submit" [disabled]="!AdminLogin.valid"> Login</button>
         </div>
-      
+        <p style="color: crimson;">{{message}}</p>
         <div class="container signin">
           <p>Forgot Password? <a href="#">Click here</a>.</p>
         </div>
-        
+
       </form>
-</div>
-</div>
+    </div>
+  </div>

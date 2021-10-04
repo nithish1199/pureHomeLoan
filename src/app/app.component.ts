@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   constructor(private service:PersonaldetailsService,private route:Router){}
   ngOnInit(): void {
     console.log("status="+this.message)
-    if(sessionStorage.getItem('USERNAME')!=null){
+    if(sessionStorage.getItem('USERNAME')!=null || sessionStorage.getItem('ADMINUSERNAME')!=null){
       this.message=true;
     }
     this.service.recievedStatus().subscribe((data)=>{
@@ -25,6 +25,7 @@ export class AppComponent implements OnInit{
   {
     console.log("hi");
     sessionStorage.removeItem('USERNAME');
+    sessionStorage.removeItem('ADMINUSERNAME');
     sessionStorage.clear();
     this.service.subject.next(false);
     //this.message=false;

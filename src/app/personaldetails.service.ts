@@ -8,6 +8,7 @@ import { IncomeDetails } from './income-details';
 import { LoanDetails } from './loan-details';
 import { ApplicationDetails } from './application-details';
 import { Account } from './account';
+import { DisplayDetails } from './display-details';
 @Injectable({
   providedIn: 'root'
 })
@@ -61,6 +62,9 @@ export class PersonaldetailsService {
     return this.httpClient.post(this.apiServer + '/PersonalDetails/login/', JSON.stringify(register), this.httpOptions)
     
   } 
+  adminlogin(adlogin:Personaldetails){
+    return this.httpClient.post(this.apiServer + '/AdminDetails/adminlogin/', JSON.stringify(adlogin), this.httpOptions) 
+  } 
   GetId(name:string){
     return this.httpClient.get<number>(this.apiServer+'/LoanDetails/'+name);
   }
@@ -71,7 +75,7 @@ export class PersonaldetailsService {
     )
   }
   GetDetailsByApplicationID(id:number){
-    return this.httpClient.get<LoanDetails>(this.apiServer+'/LoanDetails/get/'+id);
+    return this.httpClient.get<DisplayDetails>(this.apiServer+'/LoanDetails/get/'+id);
   }
   approveData(id:number,loandetails:LoanDetails){
     return this.httpClient.put(this.apiServer+'/LoanDetails/put/'+id,JSON.stringify(loandetails),this.httpOptions);
