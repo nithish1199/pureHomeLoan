@@ -43,7 +43,7 @@ export class PersonaldetailsService {
       catchError(this.errorHandler)
     )
   }
-  GetLoanDetails():Observable<LoanDetails[]>{return this.httpClient.get<LoanDetails[]>(this.apiServer+'/Pending/display')}
+  GetLoanDetails():Observable<LoanDetails[]>{return this.httpClient.get<LoanDetails[]>(this.apiServer+'/LoanDetails/display')}
 
   loandetails(loandetails:any):Observable<LoanDetails>{
     return this.httpClient.post<LoanDetails>(this.apiServer+'/LoanDetails/',JSON.stringify(loandetails),this.httpOptions)
@@ -55,7 +55,7 @@ export class PersonaldetailsService {
   //    return this.httpClient.get<Account[]>(this.apiServer+'/UserDashBoard/')
   // }
    accountdetailsByUserName(username: any):Observable<Account>{
-    return this.httpClient.get<Account>(this.apiServer+'/UserDashBoard/'+username)
+    return this.httpClient.get<Account>(this.apiServer+'/AccountDetails/'+username)
    }
 
   login(register:Personaldetails){
@@ -92,12 +92,12 @@ export class PersonaldetailsService {
     return this.httpClient.get<IncomeDetails>(this.apiServer+'/LoanDetails/income/'+id);
    }
 
-   getrejected(){
-     return this.httpClient.get(this.apiServer+'/LoanDetails/rejected')
+   getrejected():Observable<DisplayDetails[]>{
+     return this.httpClient.get<DisplayDetails[]>(this.apiServer+'/LoanDetails/rejected')
    }
 
-   getapproved(){
-     return this.httpClient.get(this.apiServer+'/LoanDetails/approved')
+   getapproved():Observable<DisplayDetails[]>{
+     return this.httpClient.get<DisplayDetails[]>(this.apiServer+'/LoanDetails/approved')
    }
    trackLoan(applicationId:any){
     return this.httpClient.post(this.apiServer+'/LoanTracker/Track',JSON.stringify(applicationId),this.httpOptions)

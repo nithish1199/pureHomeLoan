@@ -1,1 +1,24 @@
-<p>approved works!</p>
+<div [ngClass]="'style'">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Application ID</th>
+                <th>Loan Amount</th>
+                <th>Maximum Ammount Grantable</th>
+                <th>Status</th>                            
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let loan of details">
+                <td>{{loan.applicationId}}</td>
+                <td>{{loan.loanAmount}}</td>
+                <td>{{loan.maxLoanAmountGrantable}}</td>
+                <td>{{loan.status}}</td>
+                    <!--<button [routerLink]="['/update/', product.id]">Update</button>
+                    <button type="button" (click)="delete(product.id)">Remove</button>
+                </td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
+

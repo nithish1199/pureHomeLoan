@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DisplayDetails } from '../display-details';
 import { LoanDetails } from '../loan-details';
 //import { rejects } from 'assert';
 import { PersonaldetailsService } from '../personaldetails.service';
@@ -11,7 +12,7 @@ import { PersonaldetailsService } from '../personaldetails.service';
 })
 export class RejectComponent implements OnInit {
 
-  loan!:LoanDetails
+  details:DisplayDetails[]=[]
   maxamount!:number
   constructor(private service:PersonaldetailsService) { }
 
@@ -19,9 +20,8 @@ export class RejectComponent implements OnInit {
     this.rejects()
   }
   rejects(){
-    this.service.getrejected().subscribe(data=>{
-      console.log(data)
-    });
+    this.service.getrejected().subscribe((data:DisplayDetails[])=>this.details=data)
+    console.log(this.details)
    
    
   }

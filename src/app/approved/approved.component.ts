@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayDetails } from '../display-details';
+import { LoanDetails } from '../loan-details';
 import { PersonaldetailsService } from '../personaldetails.service';
 
 @Component({
@@ -7,7 +9,7 @@ import { PersonaldetailsService } from '../personaldetails.service';
   styleUrls: ['./approved.component.css']
 })
 export class ApprovedComponent implements OnInit {
-
+  details:DisplayDetails[]=[]
   constructor(private service:PersonaldetailsService) { }
 
   ngOnInit(): void {
@@ -15,9 +17,8 @@ export class ApprovedComponent implements OnInit {
   }
 
   getapproves(){
-    this.service.getapproved().subscribe(data=>{
-      console.log(data)
-    })
+    this.service.getapproved().subscribe((data:DisplayDetails[])=>this.details=data)
+    console.log(this.details)
   }
 
 }
