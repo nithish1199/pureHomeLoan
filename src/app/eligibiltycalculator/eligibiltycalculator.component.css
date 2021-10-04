@@ -1,8 +1,8 @@
-/* .style{
-    padding-top: 70px;
+ .style{
+    padding-top: 0px;
    text-align: center;
    background-color: whitesmoke;
-  } */
+  } 
   .left-title{
     font-size: 15px;
     font-weight: 500;
@@ -36,4 +36,3 @@ h1{
         margin-bottom: -20px;   
     }
 }
-
