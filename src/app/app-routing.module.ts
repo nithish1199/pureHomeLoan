@@ -21,10 +21,9 @@ import { UserComponent } from './user/user.component';
 import { UserdashComponent } from './userdash/userdash.component';
 import { LoantrackerComponent } from './loantracker/loantracker.component';
 import { ApprovalComponent } from './approval/approval.component';
-<<<<<<< HEAD
-=======
 import { DetailsComponent } from './details/details.component';
->>>>>>> 44104fa633de783c43d6da553f5940b05eda23a0
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { StatusComponent } from './status/status.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'Home',component:HomeComponent},
@@ -47,13 +46,12 @@ const routes: Routes = [
   {path:'passwordsuccessful',component:PasswordsuccessfulComponent},
   {path:'eligibiltycalculator',component:EligibiltycalculatorComponent},
   {path: 'loantracker',component:LoantrackerComponent},
-<<<<<<< HEAD
-  {path:'approval/:appid',component:ApprovalComponent}
-=======
   {path:'approval/:appid',component:ApprovalComponent},
+  {path:'approval/:username',component:ApprovalComponent},
   {path:'details',component:DetailsComponent},
+  {path:'aboutus',component:AboutusComponent},
+  {path: 'status/applicationId',component:StatusComponent},
  
->>>>>>> 44104fa633de783c43d6da553f5940b05eda23a0
 ];
 
 @NgModule({

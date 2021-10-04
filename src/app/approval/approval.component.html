@@ -1,33 +1,112 @@
-<p style="margin-top: 100px;">approval works!</p>
-
-<p>Approve User</p>
-<form formGroup="loanData">
+<div [ngClass]="'style'">
+    <h1>Approval</h1>
+</div>
+<form [formGroup]="personaldData" [ngClass]="'center'">
+    <b><p>PERSONAL DETAILS</p></b>
     <p>
-        <label for="applicationId">Application ID</label>
+        <label for="fname">First Name</label><br>
+        <input type="text" step="any" name="fname" id="fname" formControlName="firstName" readonly>
+    </p>
+    <p>
+        <label for="lname">Last Name</label><br>
+        <input type="text" step="any" name="lname" id="lname" formControlName="lastName" readonly>
+    </p>
+    <p>
+        <label for="email">Email ID</label><br>
+        <input type="text" step="any" name="email" id="email" formControlName="emailId" readonly>
+    </p>
+    <p>
+        <label for="phone">Phone Number</label><br>
+        <input type="number" step="any" name="phone" id="phone" formControlName="phoneNumber" readonly>
+    </p>
+    <p>
+        <label for="gender">Gender</label><br>
+        <input type="text" step="any" name="gender" id="gender" formControlName="gender" readonly>
+    </p>
+    <p>
+        <label for="dob">Date of Birth</label><br>
+        <input type="text" step="any" name="dob" id="dob" formControlName="dateOfBirth" readonly>
+    </p>
+    <p>
+        <label for="nationality">Nationality</label><br>
+        <input type="text" step="any" name="nationality" id="nationality" formControlName="nationality" readonly>
+    </p>
+    <p>
+        <label for="aadhar">Aadhar Number</label><br>
+        <input type="text" step="any" name="aadhar" id="aadhar" formControlName="aadharNumber" readonly>
+    </p>
+    <p>
+        <label for="pan">Pan Number</label><br>
+        <input type="text" step="any" name="pan" id="pan" formControlName="panNumber" readonly>
+    </p> 
+</form>
+
+<form [formGroup]="loanData" [ngClass]="'center'">
+    <b><p>LOAN DETAILS</p></b>
+    <p>
+        <label for="applicationId" style="text-align: center;">Application ID</label><br>
         <input type="number" name="applicationId" id="applicationId" formControlName="applicationId" readonly>
     </p>
-    <p>
-        <label for="username">username</label>
+    <!-- <p>
+        <label for="username">username</label><br>
         <input type="text" name="username" id="username" formControlName="username" readonly>
-    </p>
+    </p> -->
     <p>
-        <label for="maxLoanAmountGrantable">maxLoanAmountGrantable</label>
+        <label for="maxLoanAmountGrantable">Maximum Loan Amount Grantable</label><br>
         <input type="number" step="any" name="maxLoanAmountGrantable" id="maxLoanAmountGrantable" formControlName="maxLoanAmountGrantable" readonly>
     </p>
     <p>
-        <label for="interestRate">interestRate</label>
+        <label for="interestRate">Interest Rate</label><br>
         <input type="number" step="any" name="interestRate" id="interestRate" formControlName="interestRate" readonly>
     </p>
     <p>
-        <label for="tenure">tenure</label>
+        <label for="tenure">Tenure</label><br>
         <input type="number" name="tenure" id="tenure" formControlName="tenure" readonly>
     </p>
     <p>
-        <label for="loanAmount">Loan Amount</label>
+        <label for="loanAmount">Loan Amount</label><br>
         <input type="number" step="any" name="loanAmount" id="loanAmount" formControlName="loanAmount" readonly>
     </p>
-    <button (click)="onApprove()">Approve</button>
-     <button (click)="onReject()"> Reject</button>
+    
 </form>
+
+<form [formGroup]="incomedData" [ngClass]="'center'">
+    <b><p>INCOME DETAILS</p></b>
+
+    <p>
+        <label for="name">Property Name</label><br>
+        <input type="text" name="name" id="name" formControlName="propertyName" readonly>
+    </p>
+
+    <p>
+        <label for="location">Property Location</label><br>
+        <input type="text" name="location" id="location" formControlName="propertyLocation" readonly>
+    </p>
+
+    <p>
+        <label for="amount">Estimated Amount</label><br>
+        <input type="number" name="amount" id="amount" formControlName="estimatedAmount" readonly>
+    </p>
+
+    <p>
+        <label for="typeofemp">Type of Employment</label><br>
+        <input type="text" name="typeofemp" id="typeofemp" formControlName="typeOfEmployment" readonly>
+    </p>
+
+    <p>
+        <label for="org">Organization Type</label><br>
+        <input type="text" name="org" id="org" formControlName="organizationType" readonly>
+    </p>
+
+    <p>
+        <label for="age">Retirement Age</label><br>
+        <input type="number" name="age" id="age" formControlName="retirementAge" readonly>
+    </p>
+
+    <button class="registerbtn" (click)="onApprove()" style="margin-right: 10px;">Approve</button>
+    <button class="registerbtn" (click)="onReject()" style="margin-right: 10px;"> Reject</button>
+
+</form>
+
 
 

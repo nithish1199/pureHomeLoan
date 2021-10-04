@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaldetailsService } from '../personaldetails.service';
 
 @Component({
   selector: 'app-approved',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApprovedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:PersonaldetailsService) { }
 
   ngOnInit(): void {
+    this.getapproves()
+  }
+
+  getapproves(){
+    this.service.getapproved().subscribe(data=>{
+      console.log(data)
+    })
   }
 
 }

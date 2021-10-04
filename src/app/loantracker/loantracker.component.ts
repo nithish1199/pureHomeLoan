@@ -9,10 +9,11 @@ import { PersonaldetailsService } from '../personaldetails.service';
   styleUrls: ['./loantracker.component.css']
 })
 export class LoantrackerComponent implements OnInit {
-LoanTrackingForm=new FormGroup({
-  ApplicationNumber:new FormControl(null,[Validators.required]),
-  Phonenumber:new FormControl(null,[Validators.required])
-})
+  LoanTrackingForm=new FormGroup({
+    ApplicationNumber:new FormControl(null,[Validators.required]),
+    Phonenumber:new FormControl(null,[Validators.required])
+  })
+  message!:string;
   constructor(private route:Router,private service:PersonaldetailsService) { }
 
   ngOnInit(): void {
@@ -25,10 +26,15 @@ get applicationnumber(){
     return this.LoanTrackingForm.get('Phonenumber');
   }
   accounts:Account[]=[]
-    // Track(){
-     
-    //   return this.route.navigate(['userdash/+username'])
-    // }
+  submit()
+  {
+    this.service.trackLoan(this.LoanTrackingForm.value).subscribe(res => {
+      console.log(res)
+      console.log('Login successful'); 
+    },
+    error=>this.message="Incorrect details"
+    );this.route.navigate(['status/applicationId',{applicationId:this.LoanTrackingForm.value.ApplicationNumber}])
+}
 }
 
 

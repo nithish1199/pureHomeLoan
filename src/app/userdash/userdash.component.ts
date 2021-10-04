@@ -30,10 +30,6 @@ export class UserdashComponent implements OnInit {
     }
     logout(){
       this.route.navigate(['Home'])
-    }
-        
-
-  
-  
+    } 
 
 }

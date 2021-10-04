@@ -1,11 +1,11 @@
 export class IncomeDetails {
-    Username!:string;
-    PropertyLocation!:string;
-    PropertyName!:string;
-    EstimatedAmount!:number;
-    TypeOfEmployment!:string;
-    RetirementAge!:number;
-    OrganizationType!:string;
-    EmployerName!:string;
+    username!:string;
+    propertyLocation!:string;
+    propertyName!:string;
+    estimatedAmount!:number;
+    typeOfEmployment!:string;
+    retirementAge!:number;
+    organizationType!:string;
+    employerName!:string;
 
 }
