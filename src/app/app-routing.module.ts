@@ -22,6 +22,8 @@ import { UserdashComponent } from './userdash/userdash.component';
 import { LoantrackerComponent } from './loantracker/loantracker.component';
 import { ApprovalComponent } from './approval/approval.component';
 import { DetailsComponent } from './details/details.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { StatusComponent } from './status/status.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'Home',component:HomeComponent},
@@ -45,7 +47,10 @@ const routes: Routes = [
   {path:'eligibiltycalculator',component:EligibiltycalculatorComponent},
   {path: 'loantracker',component:LoantrackerComponent},
   {path:'approval/:appid',component:ApprovalComponent},
+  {path:'approval/:username',component:ApprovalComponent},
   {path:'details',component:DetailsComponent},
+  {path:'aboutus',component:AboutusComponent},
+  {path: 'status/applicationId',component:StatusComponent},
  
 ];
 

@@ -33,3 +33,9 @@ input[type=text], input[type=number] {
     opacity:5;
   }
   
+  .center {
+    margin: auto;
+    width: 60%;
+    border: 5px solid darkgray; 
+    padding: 10px;
+    }
