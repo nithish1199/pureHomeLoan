@@ -40,15 +40,32 @@
                     <label for="sal"><b>Monthly Salary</b></label><br>
                     <input type="number" id="sal" name="sal" formControlName="Salary" />
                 </p>
-                <p>
+                <!-- <p>
                     <label for="age"><b>Retirement Age</b></label>
                     <input type="number" id="age" name="age" formControlName="RetirementAge" />
-                </p>
+                </p> -->
 
                 <p>
                     <label for="org"><b>Organization Type</b></label>
-                    <input type="text" id="org" name="org" formControlName="OrganizationType" />
+                    <select id="org" name="org" formControlName="OrganizationType" class="select">
+                        <option [ngValue]="o" *ngFor="let o of sectors">{{o}}</option>
+                    </select>
+                    <!-- <input type="text" id="org" name="org" formControlName="OrganizationType" /> -->
                 </p>
+                <div *ngIf="OrganizationType?.value == sectors[0]">
+                    <p><label for="age"><b>Retirement Age</b></label><br>
+                        <select name="age" id="age" formControlName="RetirementAge" class="select">
+                            <option [ngValue]="a" *ngFor="let a of PrivateSec">{{a}}</option>
+                        </select>
+                    </p>
+                </div>
+                <div *ngIf="OrganizationType?.value== sectors[1]">
+                    <p><label for="age"><b>Retirement Age</b></label><br>
+                        <select name="age" id="age" formControlName="RetirementAge" class="select">
+                            <option [ngValue]="b" *ngFor="let b of GovernmentSec">{{b}}</option>
+                        </select>
+                    </p>
+                </div>
 
                 <p>
                     <label for="ename"><b>Employer Name</b></label>

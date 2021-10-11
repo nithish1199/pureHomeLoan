@@ -5,7 +5,7 @@
     <form [formGroup]="LoginForm" (ngSubmit)="submit()">
       <div class="container">
         <h1>Welcome!</h1>
-        <p>Please login to know the status of your loan</p>
+        <p>Please login to know your Application Details</p>
         <hr>
         <div><b style="color: crimson;">{{message}}</b></div>
         <p>
@@ -20,7 +20,7 @@
 
         <p>
           <label for="pass"><b>Password</b></label>
-          <input type="text" id="pass" name="pass" formControlName="Password" />
+          <input type="password" id="pass" name="pass" formControlName="Password" />
         </p>
         <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
           <div *ngIf="Password!.errors!.required">
@@ -31,9 +31,9 @@
         <button class="registerbtn" type="submit" [disabled]="!LoginForm.valid"> Login</button>
       </div>
       {{message}}
-      <div class="container signin">
+      <!-- <div class="container signin">
         <p>Forgot Password? <a href="clickhere">Click here</a>.</p>
-      </div>
+      </div> -->
 
     </form>
   </div>

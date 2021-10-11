@@ -3,5 +3,5 @@ export class Account {
      username!: string
      loanId!:number 
      amountAvailable!: number
-
+     loanStartDate!:Date
 }

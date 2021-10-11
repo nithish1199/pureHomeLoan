@@ -9,7 +9,9 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class IncomedetailsComponent implements OnInit {
   IncomeDetails!: FormGroup;
-
+  sectors=["PrivateSec","GovernmentSec"]
+  PrivateSec=[58]
+  GovernmentSec=[58,59,60]
   constructor(private service:PersonaldetailsService,private route:Router) { }
   username: any;
   ngOnInit(): void {
@@ -29,6 +31,12 @@ export class IncomedetailsComponent implements OnInit {
   }
   get PropertyLocation(){
     return this.IncomeDetails.get('PropertyLocation')
+  }
+  get OrganizationType(){
+    return this.IncomeDetails.get('OrganizationType')
+  }
+  get RetirementAge(){
+    return this.IncomeDetails.get('RetirementAge')
   }
   SubmitIncome(){
     console.log("hi");

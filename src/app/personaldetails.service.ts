@@ -9,6 +9,7 @@ import { LoanDetails } from './loan-details';
 import { ApplicationDetails } from './application-details';
 import { Account } from './account';
 import { DisplayDetails } from './display-details';
+import { Tracker } from './tracker';
 @Injectable({
   providedIn: 'root'
 })
@@ -99,8 +100,8 @@ export class PersonaldetailsService {
    getapproved():Observable<DisplayDetails[]>{
      return this.httpClient.get<DisplayDetails[]>(this.apiServer+'/LoanDetails/approved')
    }
-   trackLoan(applicationId:any){
-    return this.httpClient.post(this.apiServer+'/LoanTracker/Track',JSON.stringify(applicationId),this.httpOptions)
+  ltracker(id:number,phone:number){
+    return this.httpClient.get(this.apiServer+'/LoanTracker/track/'+id+'/'+phone);
   }
 
   statusByApplicationId(applicationId:any):Observable<ApplicationDetails>{

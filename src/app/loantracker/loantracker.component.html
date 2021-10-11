@@ -5,7 +5,7 @@
     <form [formGroup]="LoanTrackingForm"  novalidate>
         <div>
             <label for="applicationid"><b>Application ID</b> </label>
-            <input type="text" id="applicationid" formControlName="ApplicationNumber">
+            <input type="number" id="applicationid" formControlName="ApplicationNumber">
         </div>
         <div *ngIf="!applicationnumber?.valid && (applicationnumber?.dirty||applicationnumber?.touched)" class="error">
             <div *ngIf="applicationnumber?.errors!.required">
@@ -24,5 +24,6 @@
         <div class="track">
             <button class="registerbtn" type="submit" (click)="submit()" >Track</button>
         </div>
+        <p style="color: crimson;text-align: center;"><b>{{message}}</b></p>
     </form>
 </div>

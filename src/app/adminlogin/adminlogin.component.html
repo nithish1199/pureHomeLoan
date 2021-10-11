@@ -19,7 +19,7 @@
           </div>
           <p>
             <label for="pass"><b>Password</b></label>
-            <input type="text" id="pass" name="pass" formControlName="Password" />
+            <input type="password" id="pass" name="pass" formControlName="Password" />
           </p>
           <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
             <div *ngIf="Password!.errors!.required">
@@ -30,10 +30,6 @@
           <button class="registerbtn" type="submit" [disabled]="!AdminLogin.valid"> Login</button>
         </div>
         <p style="color: crimson;">{{message}}</p>
-        <div class="container signin">
-          <p>Forgot Password? <a href="#">Click here</a>.</p>
-        </div>
-
       </form>
     </div>
   </div>
